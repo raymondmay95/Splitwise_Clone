@@ -23,7 +23,10 @@ function Navigation({ isLoaded }) {
   return (
     <>
       <header>
-        <img src="https://github.com/raymondmay95/Splitwise_Clone/blob/dev/frontend/src/images/wallet.png"></img>
+        <img
+          src="https://github.com/raymondmay95/Splitwise_Clone/blob/dev/frontend/src/images/wallet.png?raw=true"
+          alt="logo"
+        ></img>
         <ul>
           <li>
             <NavLink exact to="/" className="Nav_btn-home">

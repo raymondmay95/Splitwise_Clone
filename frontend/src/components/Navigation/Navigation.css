@@ -6,6 +6,7 @@
 } */
 
 li, a, button {
+   margin: 0;
    display: block;
    font-family: Georgia, 'Times New Roman', Times, serif;
    font-size: 20px;
@@ -18,7 +19,6 @@ li, a, button {
 
 header {
    width: 100%;
-   margin: 10px;
    display: flex;
    flex-direction: row;
    /* justify-content: flex-end; */
@@ -27,14 +27,18 @@ header {
    padding-left: 15px;
    padding-bottom: 10px;
    align-items: center;
-   border-radius: 2rem;
+   border-top-left-radius: 2rem;
+   border-top-right-radius: 2rem;
    border: .25rem solid #a0c3fb;
    background-color: rgb(218, 217, 216);
 }
 
-header image {
-   width: 10%;
-
+header img {
+   margin: auto;
+   max-width: 40px;
+   background-color: transparent;
+   margin-right: 10px;
+   margin-left: 5px;
 }
 
 /* .logo { */
