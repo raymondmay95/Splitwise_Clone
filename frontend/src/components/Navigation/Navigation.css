@@ -31,6 +31,7 @@ header {
    border-top-right-radius: 2rem;
    border: .25rem solid #a0c3fb;
    background-color: rgb(218, 217, 216);
+   margin-bottom: 0;
 }
 
 header img {

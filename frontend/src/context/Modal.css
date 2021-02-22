@@ -9,16 +9,34 @@
     align-items: center;
   }
 
-  #modal-background {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.7);
+#modal-background {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
   }
 
-  #modal-content {
-    position: absolute;
-    background-color:white;
+#modal-content {
+  position: absolute;
+  background-color:rgba(18, 152, 241, 0.438);
   }
+
+#modal button {
+  display: inline;
+  margin: 20px;
+}
+
+.login-errors li {
+  background-color: rgb(238, 141, 141);
+  text-indent: 15px;
+  color: black;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 1rem;
+  margin-bottom: 0;
+}
+.login-errors {
+  margin: 0;
+  background-color:#4A4A4A;
+}

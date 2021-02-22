@@ -1,0 +1,36 @@
+.bio-container {
+   /* height: 100vh; */
+   display: flex;
+   flex-direction: column;
+   flex-wrap: wrap;
+}
+
+.bio-container {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   max-width: 70%;
+   display: block;
+}
+.bio {
+   display: flex;
+   flex-wrap: wrap;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   font-weight: 400;
+   font-size: 24px;
+   color: #1ABC9C;
+   line-height: 1;
+   align-items: center;
+   word-wrap: normal;
+}
+
+.bio_0{
+   font-weight: 600;
+   font-style: italic;
+}
+
+span:not(.bio_0) {
+   text-indent: 50px;
+   margin: 10px;
+   letter-spacing: 10px;
+}
