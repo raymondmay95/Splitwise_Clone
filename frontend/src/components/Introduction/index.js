@@ -23,11 +23,13 @@ function Introduction() {
 
   return (
     <>
-      <section className="bio-container">{bio_elements}</section>
-      <img
-        src="https://github.com/raymondmay95/Splitwise_Clone/blob/dev/frontend/src/images/bio_img_1.png"
-        alt="brought to you by your trusted app, My Fair!"
-      ></img>
+      <section className="bio-container">
+        <img
+          src="https://github.com/raymondmay95/Splitwise_Clone/blob/dev/frontend/src/images/bio_img_1.png?raw=true"
+          alt="brought to you by your trusted app, My Fair!"
+        ></img>
+        {bio_elements}
+      </section>
     </>
   );
 }
