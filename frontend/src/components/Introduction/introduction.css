@@ -1,28 +1,82 @@
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes custom {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
 
 .bio-container {
-   height: 100vh;
-   width: 88vw;
-   margin: 15px;
-   padding: 0;
+   height: 66vh;
+   width: 91vw;
+   margin-top: 0;
+   margin-bottom: 0;
+   padding: 10px;
    box-sizing: border-box;
-   border: 2px solid black;
    align-self: center;
+
 }
 .bio {
+   max-width: 60%;
+   margin: 0;
+   padding: 0;
    display: flex;
    flex-wrap: wrap;
    font-family: knockout , 'Times New Roman', Times, serif;
    font-weight: 400;
    font-size: 24px;
    color: #0aa183;
-   line-height: 1;
-   align-items: center;
    word-wrap: normal;
+   background-color: transparent;
+
 }
 
 .bio_0{
+   animation-name: custom;
+   animation-delay: 0s;
+   animation-duration: 2s;
    font-weight: 600;
    font-style: italic;
+}
+.bio_1{
+   animation-name: custom;
+   animation-delay: 0s;
+   animation-duration: 3s;
+}
+.bio_2{
+   animation-delay: 0s;
+   animation-name: custom;
+   animation-duration: 3.5s;
+}
+.bio_3{
+   animation-name: custom;
+   animation-delay: 0s;
+   animation-duration: 4s;
+}
+.bio_4{
+   animation-name: custom;
+   animation-delay: 0s;
+   animation-duration: 4.5s;
 }
 span:nth-child(1):not(.bio_0) {
    color: red;
@@ -39,12 +93,9 @@ span:not(.bio_0) {
    text-shadow: .75px .5px rgb(2, 160, 15);
 }
 
-.bio-container img {
-   -webkit-mask-image: -webkit-gradient(linear, right bottom, left bottom,from(rgba(0, 0, 0, 1)), to(rgba(0,0,0,0)));
+.bio span {
    background-color: transparent;
-   max-width: 90%;
-   margin: 0px;
-   padding: 0;
-   position: absolute;
-   z-index: -1;
+   align-items: center;
+   width: fit-content;
+   line-height: 1;
 }

@@ -19,8 +19,10 @@
   }
 
 #modal-content {
+  font-size: larger;
+  font-family: knockout;
   position: absolute;
-  background-color:rgba(18, 152, 241, 0.438);
+  background-color:rgba(18, 152, 241, 0.9);
   }
 
 #modal button {
