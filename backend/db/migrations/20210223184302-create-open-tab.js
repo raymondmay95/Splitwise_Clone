@@ -1,28 +1,35 @@
 "use strict";
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable("Owners", {
+    return queryInterface.createTable("Open_tabs", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      friends_table_id: {
+      invoiceId: {
+        allowNull: false,
         type: Sequelize.INTEGER,
-        references: { model: Owners },
+        references: { model: "Invoices" },
+      },
+      amount: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
       },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
+        defaultValue: Sequelize.fn("now"),
       },
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE,
+        defaultValue: Sequelize.fn("now"),
       },
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable("Owners");
+    return queryInterface.dropTable("Open_tabs");
   },
 };

@@ -1,7 +1,8 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Settled_tab = sequelize.define('Settled_tab', {
-    invoice_id: DataTypes.INTEGER
+    invoice_id: DataTypes.INTEGER,
+    amount: DataTypes.INTEGER
   }, {});
   Settled_tab.associate = function(models) {
     // associations can be defined here
