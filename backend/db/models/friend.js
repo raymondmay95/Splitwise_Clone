@@ -1,10 +1,14 @@
-'use strict';
+"use strict";
 module.exports = (sequelize, DataTypes) => {
-  const Friend = sequelize.define('Friend', {
-    user_id: DataTypes.INTEGER
-  }, {});
-  Friend.associate = function(models) {
-    // associations can be defined here
+  const Friend = sequelize.define(
+    "Friend",
+    {
+      userId: DataTypes.INTEGER,
+    },
+    {}
+  );
+  Friend.associate = function (models) {
+    Friend.belongsTo(models.User, { foreignKey: "userId" });
   };
   return Friend;
 };

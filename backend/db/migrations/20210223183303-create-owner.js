@@ -17,7 +17,7 @@ module.exports = {
         allowNull: false,
         type: Sequelize.JSON,
       },
-      initiated_by: {
+      initiatedBy: {
         allowNull: false,
         type: Sequelize.INTEGER,
         references: { model: "Users" },
