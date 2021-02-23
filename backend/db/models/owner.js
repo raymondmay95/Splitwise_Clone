@@ -10,7 +10,9 @@ module.exports = (sequelize, DataTypes) => {
     {}
   );
   Owner.associate = function (models) {
-    // associations can be defined here
+    Owner.hasMany(models.Invoice, { foreignKey: "groupId" });
+    Owner.hasMany(models.Friend, { foreignKey: "friendsTableId" });
+    Owner.hasOne(models.User, { foreignKey: "initiatedBy" });
   };
   return Owner;
 };

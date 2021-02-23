@@ -11,7 +11,9 @@ module.exports = (sequelize, DataTypes) => {
     {}
   );
   Comment.associate = function (models) {
-    // associations can be defined here
+    Comment.belongsTo(models.User, { foreignKey: "userId" });
+    Comment.belongsTo(models.Open_Tab, { foreignKey: "OpenTabs" });
+    Comment.belongsTo(models.Settled_Tab, { foreignKey: "SettledTabs" });
   };
   return Comment;
 };

@@ -9,7 +9,8 @@ module.exports = (sequelize, DataTypes) => {
     {}
   );
   Settled_tab.associate = function (models) {
-    // associations can be defined here
+    Settled_tab.hasMany(models.Comment, { foreignKey: "openTabs" });
+    Settled_tab.belongsTo(models.Invoice, { foreignKey: "invoiceId" });
   };
   return Settled_tab;
 };

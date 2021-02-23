@@ -22,6 +22,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         validate: {
           len: [3, 256],
+          isEmail: true,
         },
       },
       hashedPassword: {
@@ -50,6 +51,8 @@ module.exports = (sequelize, DataTypes) => {
   );
   User.associate = function (models) {
     User.hasMany(models.Friend, { foreignKey: "userId" });
+    User.hasMany(models.Comments, { foreignKey: "userId" });
+    User.hasMany(models.Owners, { foreignKey: "initiatedBy" });
   };
   User.prototype.toSafeObject = function () {
     // remember, this cannot be an arrow function
