@@ -16,7 +16,7 @@
     transform: scale(0.1);
     opacity: 0;
   }
-  60% {
+  65% {
     transform: scale(1);
     opacity: 0;
   }
