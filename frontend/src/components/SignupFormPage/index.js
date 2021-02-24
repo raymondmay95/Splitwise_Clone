@@ -8,7 +8,7 @@ function SignupFormPage() {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
   const [email, setEmail] = useState("");
-  const [username, setUsername] = useState("");
+  const [fullName, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState([]);
@@ -20,7 +20,7 @@ function SignupFormPage() {
     if (password === confirmPassword) {
       setErrors([]);
       return dispatch(
-        sessionActions.signup({ email, username, password })
+        sessionActions.signup({ email, fullName, password })
       ).catch(async (res) => {
         const data = await res.json();
         if (data && data.errors) setErrors(data.errors);
@@ -55,11 +55,11 @@ function SignupFormPage() {
             required
           />
         </label>
-        <label className="username">
+        <label className="fullName">
           Username
           <input
             type="text"
-            value={username}
+            value={fullName}
             onChange={(e) => setUsername(e.target.value)}
             required
           />

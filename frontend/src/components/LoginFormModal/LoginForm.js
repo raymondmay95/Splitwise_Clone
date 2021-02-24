@@ -28,7 +28,7 @@ function LoginForm() {
       </ul>
       <form onSubmit={handleSubmit}>
         <label>
-          Username or Email
+          Name or Email
           <input
             type="text"
             value={credential}

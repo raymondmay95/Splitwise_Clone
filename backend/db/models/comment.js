@@ -15,5 +15,6 @@ module.exports = (sequelize, DataTypes) => {
     Comment.belongsTo(models.Open_tab, { foreignKey: "openTabId" });
     Comment.belongsTo(models.Settled_tab, { foreignKey: "settledTabId" });
   };
+
   return Comment;
 };
