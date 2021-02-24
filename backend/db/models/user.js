@@ -5,6 +5,16 @@ module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define(
     "User",
     {
+      photo: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      accountBalance: {
+        type: DataTypes.INTEGER,
+        validate: {
+          isUrl: true,
+        },
+      },
       fullName: {
         type: DataTypes.STRING(50),
         allowNull: false,
@@ -22,6 +32,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         validate: {
           len: [3, 256],
+          isEmail: true,
         },
       },
       hashedPassword: {
@@ -55,8 +66,8 @@ module.exports = (sequelize, DataTypes) => {
   };
   User.prototype.toSafeObject = function () {
     // remember, this cannot be an arrow function
-    const { id, fullName, email } = this; // context will be the User instance
-    return { id, fullName, email };
+    const { id, fullName, email, accountBalance, photo } = this; // context will be the User instance
+    return { id, fullName, email, accountBalance, photo };
   };
 
   User.prototype.validatePassword = function (password) {

@@ -1,20 +1,21 @@
-/* * {
-   box-sizing: border-box;
-   margin: 0;
-   padding: 0;
-   background-color: #9bbdc7;
-} */
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap');
 
-li, a, button {
+header li, a, button {
    margin: 0;
    display: block;
    font-family: Georgia, 'Times New Roman', Times, serif;
-   font-size: 20px;
+   font-size: 16px;
    font-weight: 600;
    color: #0799ca;
-   background-color: rgb(218, 217, 216);
+   background-color: #ebd8b7;
    text-decoration: none;
    list-style-type: none;
+}
+
+.Nav_btn-home {
+   font-family: 'Akaya Telivigala', cursive;
+   font-size: 40px;
+   color: #9a8194d2
 }
 
 header {
@@ -27,10 +28,7 @@ header {
    padding-left: 15px;
    padding-bottom: 10px;
    align-items: center;
-   border-top-left-radius: 2rem;
-   border-top-right-radius: 2rem;
-   border: .25rem solid #a0c3fb;
-   background-color: rgb(218, 217, 216);
+   background-color: #ebd8b7;
    margin-bottom: 0;
 }
 
@@ -60,21 +58,21 @@ header ul li a {
    margin-right: auto;
 }
 header a:hover {
-   color: #69bae9;
+   color: #99bbad;
 }
 
 button {
    margin-left: auto;
    margin-right: 10px;
    padding: 9px 15px;
-   background-color: rgba(0, 136, 169, 1);
+   background-color: #9a8194d2;
    border: none;
    border-radius: 50px;
    cursor: pointer;
    transition: all 0.3s ease 0s;
-   color: rgb(218, 217, 216);
+   color: #ebd8b7;
 }
 
 button:hover {
-      background-color: rgba(0, 136, 169, 0.8);
+      background-color: #99bbad;
 }
