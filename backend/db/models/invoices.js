@@ -14,5 +14,6 @@ module.exports = (sequelize, DataTypes) => {
     Invoice.hasMany(models.Settled_tab, { foreignKey: "invoiceId" });
     Invoice.hasMany(models.Open_tab, { foreignKey: "invoiceId" });
   };
+
   return Invoice;
 };
