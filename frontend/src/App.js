@@ -6,7 +6,7 @@ import LoginFormPage from "./components/LoginFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import Introduction from "./components/Introduction";
-
+import Page_Design from "./components/Page_Design";
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
@@ -31,6 +31,7 @@ function App() {
             </Route>
           </Switch>
         )}
+        <Page_Design />
       </div>
     </>
   );
