@@ -13,6 +13,10 @@ module.exports = {
         type: Sequelize.INTEGER,
         references: { model: "Users" },
       },
+      friendId: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

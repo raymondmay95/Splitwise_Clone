@@ -13,10 +13,6 @@ module.exports = {
         type: Sequelize.INTEGER,
         references: { model: "Friends" },
       },
-      portions: {
-        allowNull: false,
-        type: Sequelize.JSON,
-      },
       initiatedBy: {
         allowNull: false,
         type: Sequelize.INTEGER,

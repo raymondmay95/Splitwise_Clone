@@ -8,8 +8,8 @@ module.exports = (sequelize, DataTypes) => {
     {}
   );
   Friend.associate = function (models) {
-    Friend.belongsTo(models.User, { foreignKey: "userId" });
-    Friend.hasMany(models.Owners, { foreignKey: "friendsTableId" });
+    Friend.hasMany(models.User, { foreignKey: "userId" });
+    Friend.hasMany(models.Owner, { foreignKey: "friendsTableId" });
   };
   return Friend;
 };

@@ -4,7 +4,6 @@ module.exports = (sequelize, DataTypes) => {
     "Owner",
     {
       friendsTableId: DataTypes.INTEGER,
-      portions: DataTypes.JSON,
       initiatedBy: DataTypes.INTEGER,
     },
     {}
