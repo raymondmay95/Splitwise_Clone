@@ -71,6 +71,7 @@ button {
    cursor: pointer;
    transition: all 0.3s ease 0s;
    color: #ebd8b7;
+   background-image: element("photo");
 }
 
 button:hover {
