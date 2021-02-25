@@ -1,8 +1,8 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Redirect } from "react-router-dom";
 import { useSelector } from "react-redux";
 import ProfileButton from "./ProfileButton";
-import LoginFormModal from "../LoginFormModal";
+// import LoginFormModal from "../LoginFormModal";
 import "./Navigation.css";
 
 function Navigation({ isLoaded }) {
@@ -14,8 +14,13 @@ function Navigation({ isLoaded }) {
   } else {
     sessionLinks = (
       <>
-        <LoginFormModal />
-        <NavLink to="/signup">Sign Up</NavLink>
+        {/* <LoginFormModal /> */}
+        <NavLink to="/login" className={"sessionLinks Login"}>
+          Log In
+        </NavLink>
+        <NavLink to="/signup" className={"sessionLinks signup"}>
+          Sign Up
+        </NavLink>
       </>
     );
   }
@@ -23,17 +28,11 @@ function Navigation({ isLoaded }) {
   return (
     <>
       <header>
-        <img
-          src="https://github.com/raymondmay95/Splitwise_Clone/blob/dev/frontend/src/images/wallet.png?raw=true"
-          alt="logo"
-        ></img>
-        <ul>
-          <li>
-            <NavLink exact to="/" className="Nav_btn-home">
-              Home
-            </NavLink>
-          </li>
-        </ul>
+        <div className="logo">
+          <NavLink exact to="/" className={"Nav_btn-home"}>
+            __home
+          </NavLink>
+        </div>
         {isLoaded && sessionLinks}
       </header>
     </>

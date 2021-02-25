@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
 @keyframes bounceIn {
   0% {
     transform: scale(0.1);
@@ -27,27 +28,26 @@
 }
 
 .bio-container {
-   height: 66vh;
-   width: 91vw;
-   margin-top: 0;
-   margin-bottom: 0;
+   height: 20vh;
+   width: 100%;
+   margin: 0;
    padding: 10px;
    box-sizing: border-box;
    align-self: center;
+   background-color: transparent;
 
 }
 .bio {
    max-width: 60%;
    margin: 0;
-   padding: 0;
-   display: flex;
-   flex-wrap: wrap;
-   font-family: knockout , 'Times New Roman', Times, serif;
+   padding: 5px;
+   display: inline-block;
+   /* flex-wrap: wrap; */
+   font-family: 'RocknRoll One', sans-serif;
    font-weight: 400;
    font-size: 24px;
-   color: #0aa183;
+   color: #EAEAE0;
    word-wrap: normal;
-   background-color: transparent;
 
 }
 
@@ -57,40 +57,75 @@
    animation-duration: 2s;
    font-weight: 600;
    font-style: italic;
+   padding: 4px;
 }
 .bio_1{
    animation-name: custom;
    animation-delay: 0s;
    animation-duration: 3s;
+   background-color: transparent;
+   margin: 0;
 }
 .bio_2{
    animation-delay: 0s;
    animation-name: custom;
    animation-duration: 3.5s;
+   background-color: transparent;
 }
 .bio_3{
    animation-name: custom;
    animation-delay: 0s;
    animation-duration: 4s;
+   background-color: transparent;
 }
 .bio_4{
    animation-name: custom;
    animation-delay: 0s;
    animation-duration: 4.5s;
+   background-color: transparent;
 }
 span:nth-child(1):not(.bio_0) {
    color: red;
-   text-shadow: .75px .5px rgb(160, 2, 2);
+   font-weight: bold;
+}
+span:nth-child(2):not(.bio_0) {
+   color: #EFDBCB;
+   font-weight: bold;
+}
+span:nth-child(3):not(.bio_0) {
+   color: #4bb4de;
+   font-weight: bold;
+}
+span:nth-child(4):not(.bio_0) {
+   color: #3b8ac4;
+   font-weight: bold;
+}
+span:nth-child(5):not(.bio_0) {
+   color: #345da7;
+   font-weight: bold;
+}
+span:nth-child(6):not(.bio_0) {
+   color: #3b8ac4;
+   font-weight: bold;
+}
+span:nth-child(7):not(.bio_0) {
+   color: #4bb4de;
+   font-weight: bold;
+}
+span:nth-child(8):not(.bio_0) {
+   color: #EFDBCB;
+   font-weight: bold;
+}
+span:nth-child(9):not(.bio_0) {
+   color: red;
    font-weight: bold;
 }
 
 span:not(.bio_0) {
    font-family: 'Courier New', Courier, monospace;
-   text-indent: 50px;
-   margin: 10px;
-   margin-top: 20px;
-   letter-spacing: 2px;
-   text-shadow: .75px .5px rgb(2, 160, 15);
+   /* line-height: normal; */
+   letter-spacing: 1px;
+   /* line-height: normal; */
 }
 
 .bio span {
@@ -98,4 +133,5 @@ span:not(.bio_0) {
    align-items: center;
    width: fit-content;
    line-height: 1;
+   padding: 2px;
 }

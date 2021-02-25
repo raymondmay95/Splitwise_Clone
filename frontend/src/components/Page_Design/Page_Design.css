@@ -1,0 +1,15 @@
+.Page_Design-imgContainer {
+   background-image: url('../../images/friends_footer.png');
+   background-size: cover;
+   width: 100%;
+}
+@media only screen and (max-width:1400px) {
+   .Page_Design-imgContainer {
+      background-size: 100% 100%;
+      background-repeat: no-repeat
+   }
+}
+   .outter-box {
+      display: flex;
+      height: 30vh;
+}

@@ -26,6 +26,12 @@ module.exports = {
         type: Sequelize.STRING.BINARY,
         allowNull: false,
       },
+      photo: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        defaultValue:
+          "https://github.com/raymondmay95/Splitwise_Clone/blob/dev/frontend/src/images/user_icon_demo.png?raw=true",
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

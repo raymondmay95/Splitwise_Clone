@@ -1,80 +1,72 @@
-/* * {
-   box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap');
+
+header {
    margin: 0;
    padding: 0;
-   background-color: #9bbdc7;
-} */
+   display: flex;
+   max-width: 100vw;
+   max-height: 20vh;
+   justify-items: center;
+   justify-content: flex-end;
+   align-items: center;
+   background-color: #278AB0;
+   font-family: 'Akaya Telivigala', cursive;
+   border-bottom-left-radius: 2rem;
+   border-top-left-radius: 2rem;
+   border-bottom-right-radius: 2rem;
+   border-top-right-radius: 2rem;
+}
 
-li, a, button {
-   margin: 0;
-   display: block;
-   font-family: Georgia, 'Times New Roman', Times, serif;
-   font-size: 20px;
-   font-weight: 600;
-   color: #0799ca;
-   background-color: rgb(218, 217, 216);
-   text-decoration: none;
+header li {
    list-style-type: none;
 }
 
-header {
+.logo {
+   margin-right: 75vw;
+   background-image: url('../../images/wallet.png');
+   background-size: 100% 100%;
+   background-repeat: no-repeat;
+   height: 80%;
+   width: 5%;
+
+}
+.Nav_btn-home {
+   border: 0;
+   margin-left: 2vw;
    width: 100%;
+   height: 100%;
+   color: transparent
+
+}
+header > button {
    display: flex;
-   flex-direction: row;
-   /* justify-content: flex-end; */
-   padding-top: 10px;
-   padding-right: 20px;
-   padding-left: 15px;
-   padding-bottom: 10px;
-   align-items: center;
-   border-top-left-radius: 2rem;
-   border-top-right-radius: 2rem;
-   border: .25rem solid #a0c3fb;
-   background-color: rgb(218, 217, 216);
-   margin-bottom: 0;
-}
+   border-radius: 40px;
+   max-width: 8vw;
+   max-height: 8vh;
+   margin: 15px;
+   margin-left: 10vw;
 
-header img {
-   margin: auto;
-   max-width: 40px;
+}
+#profile_btn {
+   max-width: 6vw;
+   max-height: 6vh;
    background-color: transparent;
-   margin-right: 10px;
-   margin-left: 5px;
-}
-
-/* .logo { */
-   /* cursor: pointer;
-   /* magin-right: auto
-} */
-
-header ul li {
-   /* display: inline-block; */
-   padding-left: 0px;
-
-}
-
-header ul li a {
-   display: block;
-   transition: all 0.3s ease 0s;
-   padding: auto;
-   margin-right: auto;
-}
-header a:hover {
-   color: #69bae9;
-}
-
-button {
-   margin-left: auto;
-   margin-right: 10px;
-   padding: 9px 15px;
-   background-color: rgba(0, 136, 169, 1);
    border: none;
-   border-radius: 50px;
    cursor: pointer;
-   transition: all 0.3s ease 0s;
-   color: rgb(218, 217, 216);
 }
-
-button:hover {
-      background-color: rgba(0, 136, 169, 0.8);
+.sessionLinks {
+   display: flex;
+   text-decoration: none;
+   padding: 10px;
+   max-width: 10vw;
+   max-height: 3vh;
+}
+.Login {
+   color: black
+}
+.signup {
+   color: black;
+   background-color: #EAEAE0;
+   border-bottom-right-radius: 2rem;
+   border-top-right-radius: 2rem;
 }
