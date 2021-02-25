@@ -26,12 +26,19 @@ const validateSignup = [
   handleValidationErrors,
 ];
 
+const validateName = [
+  check("fullName")
+    .exists({ checkFalsy: true })
+    .isLength({ min: 4 })
+    .withMessage("Please provide a fullName with at least 4 characters"),
+];
+
 router.post(
   "",
   validateSignup,
   asyncHandler(async (req, res) => {
-    const { email, password, fullName } = req.body;
-    const user = await User.signup({ email, fullName, password });
+    const { email, password, fullName, photo } = req.body;
+    const user = await User.signup({ email, fullName, password, photo });
 
     await setTokenCookie(res, user);
 
@@ -40,4 +47,5 @@ router.post(
     });
   })
 );
+
 module.exports = router;

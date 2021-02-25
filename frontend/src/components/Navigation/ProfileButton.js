@@ -33,7 +33,7 @@ function ProfileButton({ user }) {
       <button onClick={openMenu}>
         <img src={user.photo} alt="profile" id="profile_btn"></img>
         {/* <i className="fas fa-user-circle" /> */}
-        {console.log(user)}
+        {/* {console.log(user)} */}
       </button>
       {showMenu && (
         <ul className="profile-dropdown">

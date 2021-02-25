@@ -10,6 +10,7 @@ function SignupFormPage() {
   const [email, setEmail] = useState("");
   const [fullName, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [photo, setPhoto] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState([]);
 
@@ -20,7 +21,7 @@ function SignupFormPage() {
     if (password === confirmPassword) {
       setErrors([]);
       return dispatch(
-        sessionActions.signup({ email, fullName, password })
+        sessionActions.signup({ email, fullName, password, photo })
       ).catch(async (res) => {
         const data = await res.json();
         if (data && data.errors) setErrors(data.errors);
@@ -40,11 +41,11 @@ function SignupFormPage() {
           ))}
         </ul>
       </div>
-      <img
+      {/* <img
         src="https://media.giphy.com/media/OkJat1YNdoD3W/giphy.gif"
         id="welcome-gif"
         alt="welcome-gif"
-      ></img>
+      ></img> */}
       <form onSubmit={handleSubmit} className="Nav-bar_signup">
         <label className="email">
           Email
@@ -56,7 +57,7 @@ function SignupFormPage() {
           />
         </label>
         <label className="fullName">
-          Username
+          Full Name
           <input
             type="text"
             value={fullName}
@@ -79,6 +80,15 @@ function SignupFormPage() {
             type="password"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
+            required
+          />
+        </label>
+        <label className="user-photo_input">
+          Photo Url
+          <input
+            type="url"
+            value={photo}
+            onChange={(e) => setPhoto(e.target.value)}
             required
           />
         </label>

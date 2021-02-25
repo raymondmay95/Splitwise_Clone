@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway+Dots&display=swap');
 @keyframes bounceIn {
   0% {
     transform: scale(0.1);
@@ -28,7 +29,7 @@
 }
 
 .bio-container {
-   height: 20vh;
+   height: 40vh;
    width: 100%;
    margin: 0;
    padding: 10px;
@@ -41,7 +42,7 @@
    max-width: 60%;
    margin: 0;
    padding: 5px;
-   display: inline-block;
+   display: block;
    /* flex-wrap: wrap; */
    font-family: 'RocknRoll One', sans-serif;
    font-weight: 400;
@@ -85,8 +86,12 @@
    background-color: transparent;
 }
 span:nth-child(1):not(.bio_0) {
-   color: red;
+   font-family: 'Raleway Dots', cursive;
+   background:#345da7;
+   border-radius: 6px;
    font-weight: bold;
+   text-transform: capitalize;
+
 }
 span:nth-child(2):not(.bio_0) {
    color: #EFDBCB;
