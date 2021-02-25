@@ -31,7 +31,7 @@ function ProfileButton({ user }) {
   return (
     <>
       <button onClick={openMenu}>
-        <img src={user.photo} alt="profile"></img>
+        <img src={user.photo} alt="profile" id="profile_btn"></img>
         {/* <i className="fas fa-user-circle" /> */}
         {console.log(user)}
       </button>
