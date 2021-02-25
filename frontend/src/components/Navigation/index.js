@@ -24,15 +24,29 @@ function Navigation({ isLoaded }) {
       </>
     );
   }
+  let logoLinks;
+  if (sessionUser) {
+    logoLinks = (
+      <NavLink to="/user" className={"Nav_btn-wallet"}>
+        <div className="logo">__wallet</div>
+      </NavLink>
+    );
+  } else {
+    logoLinks = (
+      <>
+        <div className="home">
+          <NavLink exact to="/" className={"Nav_btn-home"}>
+            <h1>Home</h1>
+          </NavLink>
+        </div>
+      </>
+    );
+  }
 
   return (
     <>
       <header>
-        <div className="logo">
-          <NavLink exact to="/" className={"Nav_btn-home"}>
-            __home
-          </NavLink>
-        </div>
+        {logoLinks}
         {isLoaded && sessionLinks}
       </header>
     </>

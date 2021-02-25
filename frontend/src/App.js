@@ -7,6 +7,8 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import Introduction from "./components/Introduction";
 import Page_Design from "./components/Page_Design";
+import Account_Page from "./components/account";
+
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
@@ -26,10 +28,15 @@ function App() {
             <Route path="/signup">
               <SignupFormPage />
             </Route>
+            <Route path="/user">
+              <Account_Page />
+            </Route>
+            <Route path="/" exact>
+              <Introduction />
+              <Page_Design />
+            </Route>
           </Switch>
         )}
-        <Introduction />
-        <Page_Design />
       </div>
     </>
   );

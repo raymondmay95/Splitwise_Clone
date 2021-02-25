@@ -6,8 +6,8 @@ function Introduction() {
     "Hello and Welcome to My Fair",
     "...designed to make your life easier",
     "...designed to make your life faster",
-    "...designed to make your life more enjoyable with friends",
-    "...designed for you and your life on the go!",
+    "...designed to make your life more enjoyable",
+    "...designed to make your life your responsibility",
   ];
 
   const bio_elements = bios.map((bio, i) => {

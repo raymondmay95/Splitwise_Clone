@@ -2,10 +2,11 @@
 
 header {
    margin: 0;
+   margin-top: 10px;
    padding: 0;
    display: flex;
-   max-width: 100vw;
-   max-height: 20vh;
+   width: 95vw;
+   height: 20vh;
    justify-items: center;
    justify-content: flex-end;
    align-items: center;
@@ -22,15 +23,21 @@ header li {
 }
 
 .logo {
-   margin-right: 75vw;
-   background-image: url('../../images/wallet.png');
+   margin-right: 70vw;
+   margin-left: 1vw;
+   background-image: url('../../images/wallet-logo.png');
    background-size: 100% 100%;
    background-repeat: no-repeat;
    height: 80%;
-   width: 5%;
+   width: 16vw;
+   background-color: rgba(22, 70, 112, .8);
+   border-radius: 2rem;
+}
+.logo:hover {
+   background-color: rgba(68, 187, 107, .6);
 
 }
-.Nav_btn-home {
+.Nav_btn-wallet {
    border: 0;
    margin-left: 2vw;
    width: 100%;
@@ -53,6 +60,7 @@ header > button {
    background-color: transparent;
    border: none;
    cursor: pointer;
+   border-radius: 2rem;
 }
 .sessionLinks {
    display: flex;
@@ -62,11 +70,30 @@ header > button {
    max-height: 3vh;
 }
 .Login {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   text-align: center;
    color: black
 }
 .signup {
+      display: flex;
+   flex-direction: column;
+   justify-content: center;
+   text-align: center;
+   position: relative;
    color: black;
-   background-color: #EAEAE0;
+   background-color: rgba(68, 187, 107,1);
+   padding: 3.5vh 10px;
    border-bottom-right-radius: 2rem;
    border-top-right-radius: 2rem;
+}
+.signup:hover {
+   color: RGBA(68, 187, 107, 1);
+   background-color: rgba(68, 187, 107, .6);
+}
+
+.home {
+   position: absolute;
+   margin-right: 70vw;
 }
