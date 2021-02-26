@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
     {}
   );
   Open_tab.associate = function (models) {
-    Open_tab.hasMany(models.Comment, { foreignKey: "openTabs" });
+    Open_tab.hasMany(models.Comment, { foreignKey: "openTabId" });
     Open_tab.belongsTo(models.Invoice, { foreignKey: "invoiceId" });
   };
   return Open_tab;
