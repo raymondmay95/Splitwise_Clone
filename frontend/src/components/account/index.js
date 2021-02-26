@@ -2,10 +2,10 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { csrfFetch } from "../../store/csrf";
 import * as sessionActions from "../../store/session";
+import DashboardSidebar from "../DashboardSidebar";
 import "./account.css";
 
 function Account_Page() {
-  const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
   let { accountBalance, email, fullName, id, photo } = sessionUser;
   const [name, setName] = useState(fullName);
@@ -66,6 +66,7 @@ function Account_Page() {
         </label>
         <button type="submit">edit</button>
       </form>
+      <DashboardSidebar />
     </div>
   );
 }
