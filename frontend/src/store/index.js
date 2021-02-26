@@ -1,11 +1,13 @@
 import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 import commentReducer from "./comments";
+import friendsReducer from "./friends";
 import sessionReducer from "./session";
 
 const rootReducer = combineReducers({
   session: sessionReducer,
   comments: commentReducer,
+  friends: friendsReducer,
 });
 
 let enhancer;

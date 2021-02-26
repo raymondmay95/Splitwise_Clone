@@ -8,7 +8,6 @@ import Navigation from "./components/Navigation";
 import Introduction from "./components/Introduction";
 import Page_Design from "./components/Page_Design";
 import Account_Page from "./components/account";
-import * as commentActions from "./store/comments";
 
 function App() {
   const dispatch = useDispatch();

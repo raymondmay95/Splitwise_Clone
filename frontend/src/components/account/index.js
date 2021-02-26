@@ -1,13 +1,11 @@
-import { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { csrfFetch } from "../../store/csrf";
-import * as sessionActions from "../../store/session";
+import { useState } from "react";
+import { useSelector } from "react-redux";
 import DashboardSidebar from "../DashboardSidebar";
 import "./account.css";
 
 function Account_Page() {
   const sessionUser = useSelector((state) => state.session.user);
-  let { accountBalance, email, fullName, id, photo } = sessionUser;
+  let { accountBalance, email, fullName } = sessionUser;
   const [name, setName] = useState(fullName);
   const [reup, setReup] = useState(accountBalance);
   const [userEmail, setUserEmail] = useState(email);
@@ -20,7 +18,7 @@ function Account_Page() {
   return (
     <div className="outer-contatiner_account">
       <h1 className="account-header">Your account</h1>
-        <DashboardSidebar />
+      <DashboardSidebar />
       <ul className="edit-errors">
         {errors.map((error, idx) => (
           <li key={idx}>{error}</li>

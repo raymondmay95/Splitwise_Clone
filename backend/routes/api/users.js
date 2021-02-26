@@ -26,12 +26,12 @@ const validateSignup = [
   handleValidationErrors,
 ];
 
-const validateName = [
-  check("fullName")
-    .exists({ checkFalsy: true })
-    .isLength({ min: 4 })
-    .withMessage("Please provide a fullName with at least 4 characters"),
-];
+// const validateName = [
+//   check("fullName")
+//     .exists({ checkFalsy: true })
+//     .isLength({ min: 4 })
+//     .withMessage("Please provide a fullName with at least 4 characters"),
+// ];
 
 router.post(
   "",
