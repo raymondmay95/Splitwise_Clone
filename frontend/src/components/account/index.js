@@ -20,6 +20,7 @@ function Account_Page() {
   return (
     <div className="outer-contatiner_account">
       <h1 className="account-header">Your account</h1>
+        <DashboardSidebar />
       <ul className="edit-errors">
         {errors.map((error, idx) => (
           <li key={idx}>{error}</li>
@@ -66,7 +67,6 @@ function Account_Page() {
         </label>
         <button type="submit">edit</button>
       </form>
-      <DashboardSidebar />
     </div>
   );
 }
