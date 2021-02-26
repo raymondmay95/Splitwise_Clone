@@ -30,7 +30,7 @@ function App() {
               <SignupFormPage />
             </Route>
             <Route path="/user">
-              <Account_Page />
+              <Account_Page isLoaded={isLoaded} />
             </Route>
             <Route path="/" exact>
               <Introduction />

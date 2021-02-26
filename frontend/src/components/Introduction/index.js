@@ -1,7 +1,7 @@
 import React from "react";
 import "./introduction.css";
 
-function Introduction() {
+function Introduction(isLoaded) {
   const bios = [
     "Hello and Welcome to My Fair",
     "...designed to make your life easier",
