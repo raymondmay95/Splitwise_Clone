@@ -5,6 +5,10 @@ module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define(
     "User",
     {
+      id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+      },
       photo: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -52,6 +56,16 @@ module.exports = (sequelize, DataTypes) => {
       scopes: {
         currentUser: {
           attributes: { exclude: ["hashedPassword"] },
+        },
+        otherUser: {
+          attributes: {
+            exclude: [
+              "hashedPassword",
+              "accountBalance",
+              "createdAt",
+              "updatedAt",
+            ],
+          },
         },
         loginUser: {
           attributes: {},
@@ -101,6 +115,18 @@ module.exports = (sequelize, DataTypes) => {
       photo,
     });
     return await User.scope("currentUser").findByPk(user.id);
+  };
+
+  User.findAllUsers = async function (...userIds) {
+    const { Op } = require("sequelize");
+    const user = await User.scope("otherUser").findAll({
+      where: {
+        id: {
+          [Op.in]: userIds,
+        },
+      },
+    });
+    return user;
   };
 
   return User;

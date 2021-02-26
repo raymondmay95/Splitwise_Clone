@@ -14,6 +14,7 @@ function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
+    // dispatch(commentActions.fetchComments());
   }, [dispatch]);
 
   return (
@@ -29,7 +30,7 @@ function App() {
               <SignupFormPage />
             </Route>
             <Route path="/user">
-              <Account_Page />
+              <Account_Page isLoaded={isLoaded} />
             </Route>
             <Route path="/" exact>
               <Introduction />
