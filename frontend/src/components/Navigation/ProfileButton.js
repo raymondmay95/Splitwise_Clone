@@ -38,20 +38,22 @@ function ProfileButton({ user }) {
       </div>
       {showMenu && (
         <ul className="dropdown-menu pull-right">
-          <li>
-            <NavLink to="/">Your account</NavLink>
-          </li>
-          <li>
-            <NavLink to="/">Create a group</NavLink>
-          </li>
-          <li>
-            <NavLink to="/">Fairness calculators</NavLink>
-          </li>
-          <li>
-            <NavLink to="/" onClick={logout}>
-              Log out
-            </NavLink>
-          </li>
+          <div className="dropdown-flex_container">
+            <li>
+              <NavLink to="/user">Your account</NavLink>
+            </li>
+            <li>
+              <NavLink to="/create/group">Create a group</NavLink>
+            </li>
+            <li>
+              <NavLink to="/calculator">Fairness calculators</NavLink>
+            </li>
+            <li onClick={logout}>
+              <NavLink exact to="/">
+                Log out
+              </NavLink>
+            </li>
+          </div>
         </ul>
       )}
     </>

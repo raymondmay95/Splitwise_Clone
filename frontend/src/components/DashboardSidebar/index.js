@@ -1,16 +1,15 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { fetchComments } from "../../store/comments";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchFriends } from "../../store/friends";
 
 const DashboardSidebar = () => {
-  const [isLoaded, setIsLoaded] = useState(false);
   const CommentsSub = () => {
     const sessionUser = useSelector((state) => state.session.user);
     const { id } = sessionUser;
     const dispatch = useDispatch();
     useEffect(() => {
-      dispatch(fetchComments(id)).then(() => setIsLoaded(true));
+      dispatch(fetchComments(id));
     }, [dispatch, id]);
     const comments = useSelector((state) => state.comments);
     const userComments = comments.map((comment) => <h3>{comment.comment}</h3>);
@@ -27,12 +26,11 @@ const DashboardSidebar = () => {
       dispatch(fetchFriends(id));
     }, [dispatch, id]);
     const { user } = useSelector((state) => state.friends);
-    console.log("FLLLAAAAGGG", user);
-    let res;
+    let res = <div></div>;
     if (user) {
-      res = user.map((ele) => console.log(ele.fullName));
+      res = user.map((ele) => <h1>{ele.fullName}</h1>);
     }
-    return <h1>test</h1>;
+    return res;
   };
 
   return (

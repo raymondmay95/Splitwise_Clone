@@ -1,0 +1,19 @@
+
+.bio_container {
+   position: sticky;
+   display: flex;
+   width: 100%;
+   justify-content: center;
+}
+.bio-flex_container {
+   display: flex;
+   justify-content: flex-start;
+   justify-items: center;
+   width: 1440px;
+}
+
+.bio {
+   display: flex;
+   flex-direction: column;
+   font-size: 40px;
+}

@@ -28,6 +28,9 @@ function Navigation({ isLoaded }) {
   if (sessionUser) {
     logoLinks = (
       <>
+        <NavLink exact to="/" className="home-link">
+          Home
+        </NavLink>
         <ul class="nav pull-right">
           <li>
             <NavLink to="/user" className="dropdown-toggle">
@@ -38,28 +41,15 @@ function Navigation({ isLoaded }) {
               />
             </NavLink>
           </li>
-          <li>
-            <NavLink exact to="/">
-              Home
-            </NavLink>
-          </li>
         </ul>
       </>
     );
   } else {
     logoLinks = (
       <>
-        <ul class="nav pull-right">
-          <li>
-            <NavLink to="/" className="dropdown-toggle">
-              <img
-                id="logo"
-                src="https://github.com/raymondmay95/Splitwise_Clone/blob/084fd2cc5cfaf1494e43230a8b31083b66e840b0/frontend/src/images/wallet-logo.png?raw=true"
-                alt="logo"
-              />
-            </NavLink>
-          </li>
-        </ul>
+        <NavLink exact to="/" className="home-link">
+          Home
+        </NavLink>
       </>
     );
   }
