@@ -26,32 +26,42 @@ function LoginFormPage() {
 
   return (
     <form onSubmit={handleSubmit} className="outer-form_container">
-      <ul className="erros-form_container">
-        {errors.map((error, idx) => (
-          <li key={idx}>{error}</li>
-        ))}
-      </ul>
-      <label className="login-label user">
-        Username or Email
-        <input
-          type="text"
-          value={credential}
-          onChange={(e) => setCredential(e.target.value)}
-          required
-        />
-      </label>
-      <label className="login-label password">
-        Password
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-      </label>
-      <button type="submit" id="login-form_submit">
-        Log In
-      </button>
+      <div className="login-flex_container">
+        <ul className="erros-form_container">
+          {errors.map((error, idx) => (
+            <li key={idx}>{error}</li>
+          ))}
+        </ul>
+        <ul className="inner-form_container">
+          <li>
+            <label className="login-lable user">
+              Name or Email
+              <input
+                type="text"
+                value={credential}
+                onChange={(e) => setCredential(e.target.value)}
+                required
+              />
+            </label>
+          </li>
+          <li>
+            <label className="login-lable password">
+              Password
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </label>
+          </li>
+          <li>
+            <button type="submit" id="login-form_submit">
+              Log In
+            </button>
+          </li>
+        </ul>
+      </div>
     </form>
   );
 }

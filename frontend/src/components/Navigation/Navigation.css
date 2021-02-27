@@ -1,99 +1,41 @@
-@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap');
-
-header {
+.Header {
+   display: flex;
    margin: 0;
-   margin-top: 10px;
-   padding: 0;
-   display: flex;
-   width: 95vw;
-   height: 20vh;
-   justify-items: center;
-   justify-content: flex-end;
-   align-items: center;
-   background-color: #278AB0;
-   font-family: 'Akaya Telivigala', cursive;
-   border-bottom-left-radius: 2rem;
-   border-top-left-radius: 2rem;
-   border-bottom-right-radius: 2rem;
-   border-top-right-radius: 2rem;
-}
-
-header li {
-   list-style-type: none;
-}
-
-.logo {
-   margin-right: 70vw;
-   margin-left: 1vw;
-   background-image: url('../../images/wallet-logo.png');
-   background-size: 100% 100%;
-   background-repeat: no-repeat;
-   height: 80%;
-   width: 16vw;
-   background-color: rgba(22, 70, 112, .8);
-   border-radius: 2rem;
-}
-.logo:hover {
-   background-color: rgba(68, 187, 107, .6);
-
-}
-.Nav_btn-wallet {
-   border: 0;
-   margin-left: 2vw;
+   padding: 0px 10px 0px 10px;
+   border-radius: 0px;
    width: 100%;
-   height: 100%;
-   color: transparent
-
+   height: 47px;
+   justify-content: space-around;
 }
-header > button {
+.nav > li {
+   list-style-type: none;
+   background-color: #5bc5a7;
+   font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+   letter-spacing: normal;
+}
+.flex_container {
+   box-shadow: rgba(0,0,0,0.5) 0px 0px 3px 0px;
    display: flex;
-   border-radius: 40px;
-   max-width: 8vw;
-   max-height: 8vh;
-   margin: 15px;
-   margin-left: 10vw;
-
+   background-color: #5bc5a7;
+   align-items: center;
+   justify-content: space-around;
+   width: 1478px;
+   height: 47px;
+   box-sizing: border-box;
+   text-decoration: none;
 }
 #profile_btn {
-   max-width: 6vw;
-   max-height: 6vh;
-   background-color: transparent;
-   border: none;
-   cursor: pointer;
-   border-radius: 2rem;
+   padding: 0;
+   height: 100%;
+   width: auto;
+}
+#logo {
+   display: flex;
+   padding: 0;
+   height: 46px;
+   width: auto;
 }
 .sessionLinks {
-   display: flex;
    text-decoration: none;
-   padding: 10px;
-   max-width: 10vw;
-   max-height: 3vh;
-}
-.Login {
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   text-align: center;
-   color: black
-}
-.signup {
-      display: flex;
-   flex-direction: column;
-   justify-content: center;
-   text-align: center;
-   position: relative;
-   color: black;
-   background-color: rgba(68, 187, 107,1);
-   padding: 3.5vh 10px;
-   border-bottom-right-radius: 2rem;
-   border-top-right-radius: 2rem;
-}
-.signup:hover {
-   color: RGBA(68, 187, 107, 1);
-   background-color: rgba(68, 187, 107, .6);
-}
-
-.home {
-   position: absolute;
-   margin-right: 70vw;
+   font-size: 18px;
 }
