@@ -47,5 +47,13 @@ router.post(
     });
   })
 );
+router.patch(
+  "/addToAccount",
+  requireAuth,
+  asyncHandler(async (req, res) => {
+    console.log(req.body);
+    res.send("hello");
+  })
+);
 
 module.exports = router;
