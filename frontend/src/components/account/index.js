@@ -38,28 +38,24 @@ function Account_Page() {
     return { name, reup, userEmail };
   };
   return (
-    <div className="outer-contatiner_account">
-      <h1 className="account-header">Your account</h1>
-      <DashboardSidebar />
-      <h2>{name}</h2>
-      <h2>{userEmail}</h2>
-      <h2>{reup}</h2>
-      return (
-      <form onSubmit={formSubmitHandler}>
-        <div>
-          <ul>
-            {errors.map((error, idx) => (
-              <li key={idx}>{error}</li>
-            ))}
-          </ul>
-          <ul>
-            <li>
+    <div id="account_container">
+      <div className="inner-account_container">
+        <div className="account-header">
+          <h1 className="title">Your account</h1>
+        </div>
+        <DashboardSidebar sessionUser={sessionUser} />
+        <div className="user">
+          <h2 id="name">{name}</h2>
+          <h2 id="email">{userEmail}</h2>
+          <h2 id="balance">{`$ ${reup}`}</h2>
+        </div>
+        <form onSubmit={formSubmitHandler}>
+          <div className="inner-form_container">
+            <ul>
               <label>
                 Update Name
                 <input type="text" value={updateName} onChange={changeName} />
               </label>
-            </li>
-            <li>
               <label>
                 Update Email
                 <input
@@ -68,24 +64,15 @@ function Account_Page() {
                   onChange={changeEmail}
                 />
               </label>
-            </li>
-            <li>
               <label>
                 Update Account Balance
                 <input type="number" onChange={updateAccount} />
               </label>
-            </li>
-            <li>
               <button type="submit">Update Profile</button>
-            </li>
-          </ul>
-        </div>
-      </form>
-      <ul>
-        {errors.map((error) => (
-          <li>{error.message}</li>
-        ))}
-      </ul>
+            </ul>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }

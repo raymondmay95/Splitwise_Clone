@@ -1,5 +1,62 @@
-.outer-contatiner_account {
-   padding: 0;
+#account_container {
+   font-family: 'Lato', sans-serif;
+   box-sizing: border-box;
    margin: 0;
+   padding: 20px 150px 0px 150px;
    display: flex;
+   width: fit-content;
+   height: fit-content;
+}
+.inner-account_container {
+   display: flex;
+   width: auto;
+   height: auto;
+   flex-wrap: wrap;
+}
+.account-header {
+   display: flex;
+   justify-content: center;
+   align-self: center;
+   width: 100%;
+}
+.title{
+}
+.sidebar {
+   padding: 20px;
+}
+.user {
+   padding: 20px;
+}
+
+#name{
+   text-transform: capitalize;
+}
+#email{
+   color: blue;
+}
+#balance{
+   color: green
+}
+.inner-form_container{
+   display: flex;
+   flex-direction: column;
+   align-items: flex-end;
+   flex-wrap: wrap;
+   width: 600px;
+}
+
+.comment {
+   font-size: 18px;
+   border: 1px solid black;
+   padding: 10px 10px 5px 30px;
+   box-sizing: border-box;
+}
+
+.friends-name {
+   font-size: 24px;
+   text-align: center;
+   border-left: 2px solid gray;
+   border-bottom: 2px solid gray;
+   border-bottom-right-radius: 20px;
+   padding-bottom: 10px;
 }

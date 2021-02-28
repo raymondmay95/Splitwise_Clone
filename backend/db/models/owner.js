@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
     {}
   );
   Owner.associate = function (models) {
-    Owner.hasMany(models.Invoice, { foreignKey: "userId" });
+    Owner.hasMany(models.Invoice, { foreignKey: "groupId" });
     Owner.belongsTo(models.Friend, { foreignKey: "friendsTableId" });
     Owner.belongsTo(models.User, { foreignKey: "initiatedBy" });
   };
