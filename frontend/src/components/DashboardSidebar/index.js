@@ -1,11 +1,12 @@
 import { useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import { fetchComments } from "../../store/comments";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchFriends } from "../../store/friends";
 import { fetchInvoices } from "../../store/invoices";
 import "./dashboardSidebar.css";
 
-const DashboardSidebar = ({ sessionUser }) => {
+const DashboardSidebar_Left = ({ sessionUser }) => {
   const { user } = useSelector((state) => state.friends);
   const comments = useSelector((state) => state.comments);
   const { id } = sessionUser;
@@ -30,7 +31,9 @@ const DashboardSidebar = ({ sessionUser }) => {
   const FriendsSub = () => {
     let res = <div></div>;
     if (user) {
-      res = user.map((ele) => <h1 className="friends-name">{ele.fullName}</h1>);
+      res = user.map((ele) => (
+        <div className="friends-name">{ele.fullName}</div>
+      ));
     }
     return res;
   };
@@ -38,9 +41,10 @@ const DashboardSidebar = ({ sessionUser }) => {
   return (
     <div className="sidebar">
       <CommentsSub className="comments" />
+      <h3 className="friends-title">Your Friends</h3>
       <FriendsSub className="friends" />
     </div>
   );
 };
 
-export default DashboardSidebar;
+export default DashboardSidebar_Left;

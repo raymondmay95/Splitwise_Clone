@@ -58,9 +58,21 @@
 .dropdown-menu {
    position: absolute;
    display: block;
+   margin-top: 140px;
+   margin-left: 950px;
+   z-index: 1;
 }
 .dropdown-flex_container{
    display: flex;
    flex-direction: column;
    align-items: flex-end;
+   list-style-type: none;
+   background-color: #ffffff;
+   border-right: .5px gray solid;
+}
+.dropdown-flex_container li {
+   padding-right: 5px;
+}
+.dropdown-flex_container li:hover {
+   font-weight: bold;
 }

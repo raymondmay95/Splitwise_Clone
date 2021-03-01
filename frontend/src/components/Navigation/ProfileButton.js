@@ -40,13 +40,13 @@ function ProfileButton({ user }) {
         <ul className="dropdown-menu pull-right">
           <div className="dropdown-flex_container">
             <li>
-              <NavLink to="/user">Your account</NavLink>
+              <NavLink to="/user">Your account </NavLink>
             </li>
             <li>
-              <NavLink to="/create/group">Create a group</NavLink>
+              <NavLink to="/create/group">Create a group </NavLink>
             </li>
             <li>
-              <NavLink to="/calculator">Fairness calculators</NavLink>
+              <NavLink to="/calculator">Fairness calculators </NavLink>
             </li>
             <li onClick={logout}>
               <NavLink exact to="/">

@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
 .bio_container {
    position: sticky;
    display: flex;
@@ -7,13 +7,26 @@
 }
 .bio-flex_container {
    display: flex;
-   justify-content: flex-start;
+   align-self: center;
+   justify-self: center;
+   justify-content: center;
    justify-items: center;
-   width: 1440px;
+   width: 1400px;
+   border-bottom: 1px gray solid;
 }
 
 .bio {
+   width:76%;
+   background-color: #ffffff26;
+   font-family: 'Lato', sans-serif;
    display: flex;
    flex-direction: column;
-   font-size: 40px;
+   justify-content: center;
+   align-items: center;
+   font-size: 18px;
+   padding-top: 40px;
+   padding-bottom: 40px;
+}
+.bio:hover{
+   background-color: #ffffff4b;
 }

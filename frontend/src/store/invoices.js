@@ -11,7 +11,6 @@ const getUserInvoices = (invoices) => {
 export const fetchInvoices = (id) => async (dispatch) => {
   const response = await csrfFetch(`/api/activity/${id}`);
   const data = await response.json();
-  console.log(data.invoices);
   dispatch(getUserInvoices(data.invoices));
   return response;
 };

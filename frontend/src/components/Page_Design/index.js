@@ -27,8 +27,8 @@ export default function Page_Design() {
         </li>
         <li className="img-color_container4">
           <img
-            src="https://secure.splitwise.com/assets/home_page/fixtures/asset2.png?raw=true"
-            alt="img2"
+            src="https://secure.splitwise.com/assets/home_page/fixtures/asset1.png?raw=true"
+            alt="img1"
             className="intro-img"
           ></img>
         </li>

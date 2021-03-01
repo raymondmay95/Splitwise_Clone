@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import DashboardSidebar from "../DashboardSidebar";
+import DashboardSidebar_Left from "../DashboardSidebar";
+import Invoice_Component from "../invoices";
 import "./account.css";
 
 function Account_Page() {
@@ -37,41 +38,56 @@ function Account_Page() {
     setUserEmail(updateEmail);
     return { name, reup, userEmail };
   };
+
+  function InnerForm() {
+    return (
+      <form onSubmit={formSubmitHandler}>
+        <div className="inner-form_container">
+          <ul>
+            <label>
+              Update Name
+              <input type="text" value={updateName} onChange={changeName} />
+            </label>
+            <label>
+              Update Email
+              <input type="email" value={updateEmail} onChange={changeEmail} />
+            </label>
+            <label>
+              Update Account Balance
+              <input
+                type="number"
+                onChange={updateAccount}
+                value={updateAmount}
+              />
+            </label>
+            <button type="submit">Update Profile</button>
+          </ul>
+        </div>
+      </form>
+    );
+  }
   return (
-    <div id="account_container">
-      <div className="inner-account_container">
-        <div className="account-header">
+    <div id="center_container">
+      <div className="center_bars">
+        {/* <div className="account-header">
           <h1 className="title">Your account</h1>
+        </div> */}
+        <div className="left_sidebar">
+          <DashboardSidebar_Left sessionUser={sessionUser} />
         </div>
-        <DashboardSidebar sessionUser={sessionUser} />
-        <div className="user">
-          <h2 id="name">{name}</h2>
-          <h2 id="email">{userEmail}</h2>
-          <h2 id="balance">{`$ ${reup}`}</h2>
-        </div>
-        <form onSubmit={formSubmitHandler}>
-          <div className="inner-form_container">
-            <ul>
-              <label>
-                Update Name
-                <input type="text" value={updateName} onChange={changeName} />
-              </label>
-              <label>
-                Update Email
-                <input
-                  type="email"
-                  value={updateEmail}
-                  onChange={changeEmail}
-                />
-              </label>
-              <label>
-                Update Account Balance
-                <input type="number" onChange={updateAccount} />
-              </label>
-              <button type="submit">Update Profile</button>
-            </ul>
+        <div className="center-column">
+          <div className="user">
+            <h3 id="name">Welcome back {name}</h3>
+            <h2 id="email">{userEmail}</h2>
+            <h2 id="balance">{`$ ${reup} remaining in your account`}</h2>
           </div>
-        </form>
+          <div className="center-container">
+            <Invoice_Component />
+          </div>
+        </div>
+        <div className="right_sidebar">
+          <InnerForm />
+        </div>
       </div>
     </div>
   );
