@@ -6,8 +6,8 @@ import LoginFormPage from "./components/LoginFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import Introduction from "./components/Introduction";
-import Page_Design from "./components/Page_Design";
-import Account_Page from "./components/account";
+import PAGE_DESIGN from "./components/Page_Design";
+import ACCOUNT_PAGE from "./components/account";
 
 function App() {
   const dispatch = useDispatch();
@@ -29,11 +29,11 @@ function App() {
               <SignupFormPage />
             </Route>
             <Route path="/user">
-              <Account_Page isLoaded={isLoaded} />
+              <ACCOUNT_PAGE isLoaded={isLoaded} />
             </Route>
             <Route path="/" exact>
               <Introduction />
-              <Page_Design />
+              <PAGE_DESIGN />
             </Route>
           </Switch>
         )}

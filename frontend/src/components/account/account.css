@@ -66,3 +66,9 @@
 .amount {
    text-indent: 10px;
 }
+
+#pay-btn {
+   margin: 5px;
+   margin-left: 300px;
+   height: fit-content;
+}
