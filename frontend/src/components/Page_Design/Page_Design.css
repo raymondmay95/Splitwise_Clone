@@ -7,7 +7,7 @@
    display: flex;
    justify-content: center;
    padding-top: 40px;
-   background-image: url(../../images/background.jpg);
+   background-image: url("https://github.com/raymondmay95/Splitwise_Clone/blob/733ccdc79e9378dcc88e56ee5ba22a00d59ad2e8/frontend/src/images/background.jpg?raw=true");
    background-size: cover;
    opacity: 80%;
 }
@@ -16,7 +16,7 @@
    display: flex;
    justify-content: center;
    padding-top: 40px;
-   background-image: url(../../images/background.jpg);
+   background-image: url("https://github.com/raymondmay95/Splitwise_Clone/blob/733ccdc79e9378dcc88e56ee5ba22a00d59ad2e8/frontend/src/images/background.jpg?raw=true");
    background-size: cover;
    opacity: 80%;
 }
@@ -25,7 +25,7 @@
    display: flex;
    justify-content: center;
    padding-top: 40px;
-   background-image: url(../../images/background.jpg);
+   background-image: url("https://github.com/raymondmay95/Splitwise_Clone/blob/733ccdc79e9378dcc88e56ee5ba22a00d59ad2e8/frontend/src/images/background.jpg?raw=true");
    background-size: cover;
    opacity: 80%;
 }
@@ -34,7 +34,7 @@
    display: flex;
    justify-content: center;
    padding-top: 40px;
-   background-image: url(../../images/background.jpg);
+   background-image: url("https://github.com/raymondmay95/Splitwise_Clone/blob/733ccdc79e9378dcc88e56ee5ba22a00d59ad2e8/frontend/src/images/background.jpg?raw=true");
    background-size: cover;
    opacity: 80%;
 }
