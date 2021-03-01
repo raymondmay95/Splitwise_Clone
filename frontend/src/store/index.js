@@ -4,11 +4,13 @@ import commentReducer from "./comments";
 import friendsReducer from "./friends";
 import sessionReducer from "./session";
 import accountReducer from "./account";
+import invoiceReducer from "./invoices";
 const rootReducer = combineReducers({
   session: sessionReducer,
   comments: commentReducer,
   friends: friendsReducer,
   account: accountReducer,
+  invoices: invoiceReducer,
 });
 
 let enhancer;

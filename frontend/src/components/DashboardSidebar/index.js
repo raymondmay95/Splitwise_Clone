@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { fetchComments } from "../../store/comments";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchFriends } from "../../store/friends";
+import { fetchInvoices } from "../../store/invoices";
 import "./dashboardSidebar.css";
 
 const DashboardSidebar = ({ sessionUser }) => {
@@ -13,6 +14,7 @@ const DashboardSidebar = ({ sessionUser }) => {
   useEffect(() => {
     dispatch(fetchComments(id));
     dispatch(fetchFriends(id));
+    dispatch(fetchInvoices(id));
   }, [dispatch, id]);
   const CommentsSub = () => {
     const userComments = comments.map((comment, i) => (

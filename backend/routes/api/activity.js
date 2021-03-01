@@ -11,8 +11,7 @@ router.get(
     const owner = await Owner.allActivity(id);
     const groupIds = owner.map((ele) => ele.id);
     const invoices = await Invoice.getInvoiceByGroupId(groupIds);
-    console.log(invoices);
-    res.json({ owner, invoices });
+    res.json({ invoices });
   })
 );
 
