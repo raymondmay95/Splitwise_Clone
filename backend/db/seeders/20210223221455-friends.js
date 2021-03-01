@@ -51,7 +51,7 @@ module.exports = {
       },
       {
         userId: 1,
-        friendId: 11,
+        friendId: 12,
       },
       {
         userId: 2,

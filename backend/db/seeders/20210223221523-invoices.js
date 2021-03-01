@@ -23,7 +23,21 @@ module.exports = {
           details: "for movies",
           photo:
             "https://media.titanbooks.com/catalog/products/GeminiMan_novel.jpg",
-          amount: 950.0,
+          amount: 17.9,
+        },
+        {
+          groupId: 3,
+          details: "for dinner",
+          photo:
+            "https://media.titanbooks.com/catalog/products/GeminiMan_novel.jpg",
+          amount: 57.43,
+        },
+        {
+          groupId: 3,
+          details: "for Ride",
+          photo:
+            "https://media.titanbooks.com/catalog/products/GeminiMan_novel.jpg",
+          amount: 10,
         },
       ],
       {}

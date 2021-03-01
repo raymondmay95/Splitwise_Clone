@@ -14,12 +14,22 @@ module.exports = {
         {
           openTabId: 1,
           userId: 1,
-          comment: "hello world",
+          comment: "What a great night. Thanks Bro!",
         },
         {
           openTabId: 1,
           userId: 2,
-          comment: "hello world! this is a test",
+          comment: "Life saver! Don't know what I'd do without you",
+        },
+        {
+          openTabId: 1,
+          userId: 1,
+          comment: "Anytime mate!",
+        },
+        {
+          openTabId: 1,
+          userId: 1,
+          comment: "Thanks again",
         },
       ],
       {}
