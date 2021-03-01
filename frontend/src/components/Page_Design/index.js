@@ -13,14 +13,14 @@ export default function PAGE_DESIGN() {
         </li>
         <li className="img-color_container2">
           <img
-            src="https://secure.splitwise.com/assets/home_page/fixtures/asset2.png?raw=true"
+            src="https://github.com/raymondmay95/Splitwise_Clone/blob/master/frontend/src/images/iphone_dark.png?raw=true"
             alt="img2"
             className="intro-img"
           ></img>
         </li>
         <li className="img-color_container3">
           <img
-            src="https://secure.splitwise.com/assets/home_page/fixtures/asset2.png?raw=true"
+            src="https://github.com/raymondmay95/Splitwise_Clone/blob/master/frontend/src/images/iphone_dark.png?raw=true"
             alt="img2"
             className="intro-img"
           ></img>
