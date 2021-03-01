@@ -56,13 +56,13 @@
 }
 
 .intro-img1 {
-   background-image: url("../../images/iphone_light.png");
+   background-image: url("https://github.com/raymondmay95/Splitwise_Clone/blob/5826179b4acc27d41fcda02f2e0286729a0f061f/frontend/src/images/iphone_light.png?raw=true");
    background-size: cover;
    width: 325px;
 }
 
 .intro-img2 {
-   background-image: url("../../images/iphone_light.png");
+   background-image: url("https://github.com/raymondmay95/Splitwise_Clone/blob/5826179b4acc27d41fcda02f2e0286729a0f061f/frontend/src/images/iphone_dark.png?raw=true");
    background-size: cover;
    width: 325px;
    height: 440px;
