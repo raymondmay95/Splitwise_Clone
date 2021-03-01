@@ -1,9 +1,9 @@
 import React from "react";
 import "./Page_Design.css";
 const iphone_light =
-  "https://raw.githubusercontent.com/raymondmay95/Splitwise_Clone/master/frontend/src/images/iphone_light.png";
+  "https://raw.githubusercontent.com/raymondmay95/Splitwise_Clone/master/frontend/src/images/iphone_light.png?raw=true";
 const iphone_dark =
-  "https://raw.githubusercontent.com/raymondmay95/Splitwise_Clone/master/frontend/src/images/iphone_dark.png";
+  "https://raw.githubusercontent.com/raymondmay95/Splitwise_Clone/master/frontend/src/images/iphone_dark.png?raw=true";
 export default function PAGE_DESIGN() {
   return (
     <div className="img_container">
