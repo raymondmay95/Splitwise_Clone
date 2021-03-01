@@ -1,12 +1,11 @@
 import { useEffect } from "react";
-import { NavLink } from "react-router-dom";
 import { fetchComments } from "../../store/comments";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchFriends } from "../../store/friends";
 import { fetchInvoices } from "../../store/invoices";
 import "./dashboardSidebar.css";
 
-const DashboardSidebar_Left = ({ sessionUser }) => {
+const DASHBOARDSIDEBAR_LEFT = ({ sessionUser }) => {
   const { user } = useSelector((state) => state.friends);
   const comments = useSelector((state) => state.comments);
   const { id } = sessionUser;
@@ -47,4 +46,4 @@ const DashboardSidebar_Left = ({ sessionUser }) => {
   );
 };
 
-export default DashboardSidebar_Left;
+export default DASHBOARDSIDEBAR_LEFT;

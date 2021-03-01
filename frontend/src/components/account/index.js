@@ -1,29 +1,25 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import DashboardSidebar_Left from "../DashboardSidebar";
-import Invoice_Component from "../invoices";
+import DASHBOARDSIDEBAR_LEFT from "../DashboardSidebar";
+import INVOICE_COMPONENT from "../invoices";
 import "./account.css";
 
-function Account_Page() {
+function ACCOUNT_PAGE() {
   const sessionUser = useSelector((state) => state.session.user);
   let { accountBalance, email, fullName } = sessionUser;
   const [name, setName] = useState(fullName);
   const [reup, setReup] = useState(accountBalance);
   const [userEmail, setUserEmail] = useState(email);
-  const [errors, setErrors] = useState([]);
   const [updateAmount, setUpdateAmount] = useState(0);
   const [updateName, setUpdateName] = useState(fullName);
   const [updateEmail, setUpdateEmail] = useState(email);
   const updateAccount = (e) => {
-    e.preventDefault();
     return setUpdateAmount(e.target.value);
   };
   const changeEmail = async (e) => {
-    e.preventDefault();
     return setUpdateEmail(e.target.value);
   };
   const changeName = (e) => {
-    e.preventDefault();
     let newName = e.target.value;
     return setUpdateName(newName);
   };
@@ -60,7 +56,9 @@ function Account_Page() {
                 value={updateAmount}
               />
             </label>
-            <button type="submit">Update Profile</button>
+            <button type="submit" onClick={formSubmitHandler}>
+              Update Profile
+            </button>
           </ul>
         </div>
       </form>
@@ -73,7 +71,7 @@ function Account_Page() {
           <h1 className="title">Your account</h1>
         </div> */}
         <div className="left_sidebar">
-          <DashboardSidebar_Left sessionUser={sessionUser} />
+          <DASHBOARDSIDEBAR_LEFT sessionUser={sessionUser} />
         </div>
         <div className="center-column">
           <div className="user">
@@ -82,7 +80,7 @@ function Account_Page() {
             <h2 id="balance">{`$ ${reup} remaining in your account`}</h2>
           </div>
           <div className="center-container">
-            <Invoice_Component />
+            <INVOICE_COMPONENT setReup={setReup} />
           </div>
         </div>
         <div className="right_sidebar">
@@ -93,4 +91,4 @@ function Account_Page() {
   );
 }
 
-export default Account_Page;
+export default ACCOUNT_PAGE;
