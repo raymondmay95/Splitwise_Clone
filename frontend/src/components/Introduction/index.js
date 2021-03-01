@@ -14,7 +14,7 @@ function Introduction(isLoaded) {
       <section className="bio_container">
         <div className="bio-flex_container">
           <div class="bio">
-            <h1>Hello and Welcome to My Fair</h1>
+            <h1>Hello and Welcome to My Fare</h1>
             {bios.map((bio, i) => (
               <h3 className={`bio_${i}`}>{bio}</h3>
             ))}
