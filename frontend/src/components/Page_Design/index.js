@@ -7,16 +7,16 @@ export default function PAGE_DESIGN() {
     <div className="img_container">
       <ul className="img-flex_container">
         <li className="img-color_container1">
-          <img src={iphone_light} alt="img1" className="intro-img"></img>
+          <div className="intro-img1"></div>
         </li>
         <li className="img-color_container2">
-          <img src={iphone_dark} alt="img2" className="intro-img"></img>
+          <div className="intro-img2"></div>
         </li>
         <li className="img-color_container3">
-          <img src={iphone_dark} alt="img2" className="intro-img"></img>
+          <div className="intro-img2"></div>
         </li>
         <li className="img-color_container4">
-          <img src={iphone_light} alt="img1" className="intro-img"></img>
+          <div className="intro-img1"></div>
         </li>
       </ul>
     </div>
