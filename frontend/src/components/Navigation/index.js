@@ -27,28 +27,41 @@ function Navigation({ isLoaded }) {
   let logoLinks;
   if (sessionUser) {
     logoLinks = (
-      <NavLink to="/user" className={"Nav_btn-wallet"}>
-        <div className="logo">__wallet</div>
-      </NavLink>
+      <>
+        <NavLink exact to="/" className="home-link">
+          Home
+        </NavLink>
+        <ul class="nav pull-right">
+          <li>
+            <NavLink to="/user" className="dropdown-toggle">
+              <img
+                id="logo"
+                src="https://github.com/raymondmay95/Splitwise_Clone/blob/084fd2cc5cfaf1494e43230a8b31083b66e840b0/frontend/src/images/wallet-logo.png?raw=true"
+                alt="logo"
+              />
+            </NavLink>
+          </li>
+        </ul>
+      </>
     );
   } else {
     logoLinks = (
       <>
-        <div className="home">
-          <NavLink exact to="/" className={"Nav_btn-home"}>
-            <h1>Home</h1>
-          </NavLink>
-        </div>
+        <NavLink exact to="/" className="home-link">
+          Home
+        </NavLink>
       </>
     );
   }
 
   return (
     <>
-      <header>
-        {logoLinks}
-        {isLoaded && sessionLinks}
-      </header>
+      <div className="Header">
+        <div className="flex_container">
+          {logoLinks}
+          {isLoaded && sessionLinks}
+        </div>
+      </div>
     </>
   );
 }

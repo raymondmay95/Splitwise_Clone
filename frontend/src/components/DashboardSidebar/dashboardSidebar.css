@@ -1,0 +1,11 @@
+.friends-name {
+   font-size: 14px;
+   color: gray;
+
+}
+.friends-title {
+   margin: 0;
+   text-decoration: underline;
+   text-decoration-color: gray;
+   color: #666;
+}

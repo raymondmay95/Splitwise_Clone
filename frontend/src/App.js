@@ -14,7 +14,6 @@ function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
-    // dispatch(commentActions.fetchComments());
   }, [dispatch]);
 
   return (

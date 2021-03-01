@@ -1,46 +1,50 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import { fetchComments } from "../../store/comments";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchFriends } from "../../store/friends";
+import { fetchInvoices } from "../../store/invoices";
+import "./dashboardSidebar.css";
 
-const DashboardSidebar = () => {
-  const [isLoaded, setIsLoaded] = useState(false);
+const DashboardSidebar_Left = ({ sessionUser }) => {
+  const { user } = useSelector((state) => state.friends);
+  const comments = useSelector((state) => state.comments);
+  const { id } = sessionUser;
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchComments(id));
+    dispatch(fetchFriends(id));
+    dispatch(fetchInvoices(id));
+  }, [dispatch, id]);
   const CommentsSub = () => {
-    const sessionUser = useSelector((state) => state.session.user);
-    const { id } = sessionUser;
-    const dispatch = useDispatch();
-    useEffect(() => {
-      dispatch(fetchComments(id)).then(() => setIsLoaded(true));
-    }, [dispatch, id]);
-    const comments = useSelector((state) => state.comments);
-    const userComments = comments.map((comment) => <h3>{comment.comment}</h3>);
+    const userComments = comments.map((comment, i) => (
+      <h3 className={`comment comment_${i}`}>{`${comment.createdAt.slice(
+        0,
+        10
+      )}: \n ${comment.comment}`}</h3>
+    ));
 
     return userComments;
   };
 
   const FriendsSub = () => {
-    const sessionUser = useSelector((state) => state.session.user);
-
-    const { id } = sessionUser;
-    const dispatch = useDispatch();
-    useEffect(() => {
-      dispatch(fetchFriends(id));
-    }, [dispatch, id]);
-    const { user } = useSelector((state) => state.friends);
-    console.log("FLLLAAAAGGG", user);
-    let res;
+    let res = <div></div>;
     if (user) {
-      res = user.map((ele) => console.log(ele.fullName));
+      res = user.map((ele) => (
+        <div className="friends-name">{ele.fullName}</div>
+      ));
     }
-    return <h1>test</h1>;
+    return res;
   };
 
   return (
-    <div>
-      <CommentsSub />
-      <FriendsSub />
+    <div className="sidebar">
+      <CommentsSub className="comments" />
+      <h3 className="friends-title">Your Friends</h3>
+      <FriendsSub className="friends" />
     </div>
   );
 };
 
-export default DashboardSidebar;
+export default DashboardSidebar_Left;

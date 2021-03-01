@@ -126,6 +126,11 @@ module.exports = (sequelize, DataTypes) => {
         },
       },
     });
+
+    User.addToAccount = async function (id, value) {
+      let user = await User.findByPk(id);
+      console.log(user);
+    };
     return user;
   };
 

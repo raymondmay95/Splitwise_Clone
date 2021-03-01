@@ -1,142 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Raleway+Dots&display=swap');
-@keyframes bounceIn {
-  0% {
-    transform: scale(0.1);
-    opacity: 0;
-  }
-  60% {
-    transform: scale(1.2);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-@keyframes custom {
-  0% {
-    transform: scale(0.1);
-    opacity: 0;
-  }
-  65% {
-    transform: scale(1);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-.bio-container {
-   height: 40vh;
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
+.bio_container {
+   position: sticky;
+   display: flex;
    width: 100%;
-   margin: 0;
-   padding: 10px;
-   box-sizing: border-box;
+   justify-content: center;
+}
+.bio-flex_container {
+   display: flex;
    align-self: center;
-   background-color: transparent;
-
+   justify-self: center;
+   justify-content: center;
+   justify-items: center;
+   width: 1400px;
+   border-bottom: 1px gray solid;
 }
+
 .bio {
-   max-width: 60%;
-   margin: 0;
-   padding: 5px;
-   display: block;
-   /* flex-wrap: wrap; */
-   font-family: 'RocknRoll One', sans-serif;
-   font-weight: 400;
-   font-size: 24px;
-   color: #EAEAE0;
-   word-wrap: normal;
-
-}
-
-.bio_0{
-   animation-name: custom;
-   animation-delay: 0s;
-   animation-duration: 2s;
-   font-weight: 600;
-   font-style: italic;
-   padding: 4px;
-}
-.bio_1{
-   animation-name: custom;
-   animation-delay: 0s;
-   animation-duration: 3s;
-   background-color: transparent;
-   margin: 0;
-}
-.bio_2{
-   animation-delay: 0s;
-   animation-name: custom;
-   animation-duration: 3.5s;
-   background-color: transparent;
-}
-.bio_3{
-   animation-name: custom;
-   animation-delay: 0s;
-   animation-duration: 4s;
-   background-color: transparent;
-}
-.bio_4{
-   animation-name: custom;
-   animation-delay: 0s;
-   animation-duration: 4.5s;
-   background-color: transparent;
-}
-span:nth-child(1):not(.bio_0) {
-   font-family: 'Raleway Dots', cursive;
-   background:#345da7;
-   border-radius: 6px;
-   font-weight: bold;
-   text-transform: capitalize;
-
-}
-span:nth-child(2):not(.bio_0) {
-   color: #EFDBCB;
-   font-weight: bold;
-}
-span:nth-child(3):not(.bio_0) {
-   color: #4bb4de;
-   font-weight: bold;
-}
-span:nth-child(4):not(.bio_0) {
-   color: #3b8ac4;
-   font-weight: bold;
-}
-span:nth-child(5):not(.bio_0) {
-   color: #345da7;
-   font-weight: bold;
-}
-span:nth-child(6):not(.bio_0) {
-   color: #3b8ac4;
-   font-weight: bold;
-}
-span:nth-child(7):not(.bio_0) {
-   color: #4bb4de;
-   font-weight: bold;
-}
-span:nth-child(8):not(.bio_0) {
-   color: #EFDBCB;
-   font-weight: bold;
-}
-span:nth-child(9):not(.bio_0) {
-   color: red;
-   font-weight: bold;
-}
-
-span:not(.bio_0) {
-   font-family: 'Courier New', Courier, monospace;
-   /* line-height: normal; */
-   letter-spacing: 1px;
-   /* line-height: normal; */
-}
-
-.bio span {
-   background-color: transparent;
+   width:76%;
+   background-color: #ffffff26;
+   font-family: 'Lato', sans-serif;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
    align-items: center;
-   width: fit-content;
-   line-height: 1;
-   padding: 2px;
+   font-size: 18px;
+   padding-top: 40px;
+   padding-bottom: 40px;
+}
+.bio:hover{
+   background-color: #ffffff4b;
 }

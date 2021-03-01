@@ -3,27 +3,24 @@ import "./introduction.css";
 
 function Introduction(isLoaded) {
   const bios = [
-    "Hello and Welcome to My Fair",
-    "...designed to make your life easier",
-    "...designed to make your life faster",
-    "...designed to make your life more enjoyable",
-    "...designed to make your life your responsibility",
+    ["...designed to make your life easier"],
+    ["...designed to make your life faster"],
+    ["...designed to make your life more enjoyable"],
+    ["...designed to make your life your responsibility"],
   ];
-
-  const bio_elements = bios.map((bio, i) => {
-    let bioArray = bio.split(" ");
-    return (
-      <div class="bio">
-        {bioArray.map((ele) => (
-          <span className={`bio_${i}`}>{ele}</span>
-        ))}
-      </div>
-    );
-  });
 
   return (
     <>
-      <section className="bio-container">{bio_elements}</section>
+      <section className="bio_container">
+        <div className="bio-flex_container">
+          <div class="bio">
+            <h1>Hello and Welcome to My Fair</h1>
+            {bios.map((bio, i) => (
+              <h3 className={`bio_${i}`}>{bio}</h3>
+            ))}
+          </div>
+        </div>
+      </section>
     </>
   );
 }
