@@ -13,5 +13,10 @@ module.exports = (sequelize, DataTypes) => {
     Settled_tab.belongsTo(models.Invoice, { foreignKey: "invoiceId" });
   };
 
+  Settled_tab.getTab = async function (id) {
+    const tab = await Settled_tab.findByPk(id);
+    return tab;
+  };
+
   return Settled_tab;
 };

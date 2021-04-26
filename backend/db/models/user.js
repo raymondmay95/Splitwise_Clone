@@ -134,5 +134,8 @@ module.exports = (sequelize, DataTypes) => {
     return user;
   };
 
+  User.findBalance = function () {
+    return this.User.accountBalance;
+  };
   return User;
 };

@@ -9,6 +9,7 @@ import { ModalProvider } from "./context/Modal";
 import configureStore from "./store";
 import { restoreCSRF, csrfFetch } from "./store/csrf";
 import * as sessionActions from "./store/session";
+import * as accountActions from "./store/account";
 
 const store = configureStore();
 
@@ -18,11 +19,16 @@ if (process.env.NODE_ENV !== "production") {
   window.csrfFetch = csrfFetch;
   window.store = store;
   window.sessionActions = sessionActions;
+  window.accountActions = accountActions;
 }
 
 function Root() {
   return (
-    <Provider store={store}>
+    <Provider
+      store={store}
+      sessionActions={sessionActions}
+      accountActions={accountActions}
+    >
       <ModalProvider>
         <BrowserRouter>
           <App />

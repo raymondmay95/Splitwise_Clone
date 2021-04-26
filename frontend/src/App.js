@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import SignupFormPage from "./components/SignupFormPage";
 import LoginFormPage from "./components/LoginFormPage";
 import * as sessionActions from "./store/session";
+import * as accountActions from "./store/account";
 import Navigation from "./components/Navigation";
 import Introduction from "./components/Introduction";
 import PAGE_DESIGN from "./components/Page_Design";
@@ -14,6 +15,7 @@ function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
+    dispatch(accountActions.getAccountBalance());
   }, [dispatch]);
 
   return (

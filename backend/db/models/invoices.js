@@ -1,5 +1,6 @@
 "use strict";
 module.exports = (sequelize, DataTypes) => {
+  const { Op } = require("sequelize");
   const Invoice = sequelize.define(
     "Invoice",
     {
@@ -17,7 +18,6 @@ module.exports = (sequelize, DataTypes) => {
   };
 
   Invoice.getInvoiceByGroupId = async function (groupIds) {
-    const { Op } = require("sequelize");
     const invoices = await Invoice.findAll({
       where: {
         groupId: {
@@ -27,6 +27,11 @@ module.exports = (sequelize, DataTypes) => {
       order: ["createdAt"],
     });
     return invoices;
+  };
+
+  Invoice.getInvoice = async function (id) {
+    const invoice = await Invoice.findByPk(id);
+    return invoice;
   };
 
   return Invoice;

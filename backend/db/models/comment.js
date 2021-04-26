@@ -18,12 +18,22 @@ module.exports = (sequelize, DataTypes) => {
   };
 
   Comment.findAllCommentsByUserId = async function (id) {
-    const comment = await Comment.findAll({
+    const comments = await Comment.findAll({
       where: {
         userId: id,
       },
     });
-    return comment;
+    return comments;
+  };
+
+  Comment.findByBill = async function (id) {
+    const { Op } = require("sequelize");
+    const comments = await Comment.findAll({
+      where: {
+        [Op.or]: [{ openTabId: id }, { settledTabId: id }],
+      },
+    });
+    return comments;
   };
 
   return Comment;

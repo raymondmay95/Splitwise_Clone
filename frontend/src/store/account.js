@@ -1,28 +1,32 @@
 import { csrfFetch } from "./csrf";
-const UPDATEACCOUNT = "accountBalance,setAccountBalance";
-const setAccountBalance = (id, amount) => ({
-  type: UPDATEACCOUNT,
-  payload: [id, amount],
+
+const GETBALANCE = "balance/setBALANCE";
+
+const setBALANCE = (balance) => ({
+  type: GETBALANCE,
+  payload: balance,
 });
 
-export const updateAccount = (id, value) => {
+export const getAccountBalance = () => {
   return async (dispatch) => {
-    const amount = await csrfFetch("/api/user/account", {
-      method: "POST",
-      body: JSON.stringify({ id, value }),
+    const data = await csrfFetch("/api/user/balance", {
+      method: "get",
     });
-    const data = amount.json();
-    dispatch(setAccountBalance(data));
+    if (data.ok) {
+      let balance = await data.json();
+      console.log(balance);
+      dispatch(setBALANCE(balance));
+    } else {
+      dispatch(setBALANCE({ error: ["couldn't fetch account balance", 404] }));
+    }
   };
 };
 
-const data = [];
+const data = { accountBalance: null };
 export default function accountReducer(state = data, action) {
-  let response;
   switch (action.type) {
-    case UPDATEACCOUNT:
-      response = action.accountBalance;
-      return response;
+    case GETBALANCE:
+      return action.payload;
     default:
       return state;
   }
