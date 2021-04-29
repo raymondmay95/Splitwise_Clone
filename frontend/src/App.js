@@ -6,7 +6,6 @@ import LoginFormPage from "./components/LoginFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import Introduction from "./components/Introduction";
-import PAGE_DESIGN from "./components/Page_Design";
 import ACCOUNT_PAGE from "./components/account";
 
 function App() {
@@ -19,7 +18,7 @@ function App() {
   return (
     <>
       <div className="App-containter">
-        <Navigation isLoaded={isLoaded} />
+        {/* <Navigation isLoaded={isLoaded} /> */}
         {isLoaded && (
           <Switch>
             <Route path="/login">
@@ -33,7 +32,6 @@ function App() {
             </Route>
             <Route path="/" exact>
               <Introduction />
-              <PAGE_DESIGN />
             </Route>
           </Switch>
         )}

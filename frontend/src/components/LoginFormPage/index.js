@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import * as sessionActions from "../../store/session";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
-import "./LoginForm.css";
+import * as classes from "./LoginForm.module.css";
 
 function LoginFormPage() {
   const dispatch = useDispatch();
@@ -25,42 +25,39 @@ function LoginFormPage() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="outer-form_container">
-      <div className="login-flex_container">
+    <form onSubmit={handleSubmit} className={classes.outer_form_container}>
+      <div className={classes.login_flex_container}>
         <ul className="erros-form_container">
           {errors.map((error, idx) => (
             <li key={idx}>{error}</li>
           ))}
         </ul>
-        <ul className="inner-form_container">
-          <li>
-            <label className="login-lable user">
-              Name or Email
-              <input
-                type="text"
-                value={credential}
-                onChange={(e) => setCredential(e.target.value)}
-                required
-              />
-            </label>
-          </li>
-          <li>
-            <label className="login-lable password">
-              Password
-              <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
-            </label>
-          </li>
-          <li>
-            <button type="submit" id="login-form_submit">
-              Log In
-            </button>
-          </li>
-        </ul>
+        <fieldset className={classes.login}>
+          <label></label>
+          Name or Email
+          <input
+            type="text"
+            value={credential}
+            onChange={(e) => setCredential(e.target.value)}
+            required
+          />
+        </fieldset>
+        <fieldset>
+          <label className="login-lable password">
+            Password
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </label>
+        </fieldset>
+        <div>
+          <button type="submit" id="login-form_submit">
+            Log In
+          </button>
+        </div>
       </div>
     </form>
   );
