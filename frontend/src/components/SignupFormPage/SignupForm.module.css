@@ -10,15 +10,21 @@
    justify-self: center;
 }
 
+.fieldset_signup>input {
+   background-color: var(--text-box-color);
+   text-align: right;
+}
+
 .button {
    display: flex;
    justify-content: space-between;
    margin-top: 1rem;
 }
 
-.login {
+.toLogin {
    font-weight: bold;
 }
+
 .button>button {
    width: 4rem;
    border: none;

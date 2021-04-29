@@ -38,7 +38,7 @@ function SignupFormPage({ setLogin }) {
     <>
       <form onSubmit={handleSubmit} className={classes.signup}>
         <fieldset className={classes.fieldset_signup}>
-          <legend className={classes.email}>Email</legend>
+          <legend className={classes.email}>Email 📨</legend>
           <input
             type="text"
             value={email}
@@ -47,7 +47,7 @@ function SignupFormPage({ setLogin }) {
           />
         </fieldset>
         <fieldset className={classes.fieldset_signup}>
-          <legend className={classes.name}>Full Name</legend>
+          <legend className={classes.name}>Full Name 📛</legend>
           <input
             type="text"
             value={fullName}
@@ -56,7 +56,7 @@ function SignupFormPage({ setLogin }) {
           />
         </fieldset>
         <fieldset className={classes.fieldset_signup}>
-          <legend className={classes.password}>Password</legend>
+          <legend className={classes.password}>Password 🔑</legend>
           <input
             type="password"
             value={password}
@@ -65,7 +65,7 @@ function SignupFormPage({ setLogin }) {
           />
         </fieldset>
         <fieldset className={classes.fieldset_signup}>
-          <legend className={classes.password}>Confirm Password</legend>
+          <legend className={classes.password}>Confirm Password ✔</legend>
           <input
             type="password"
             value={confirmPassword}
@@ -74,7 +74,7 @@ function SignupFormPage({ setLogin }) {
           />
         </fieldset>
         <fieldset className={classes.fieldset_signup}>
-          <legend className={classes.photoInput}>Photo Url</legend>
+          <legend className={classes.photoInput}>Photo Url 📸</legend>
           <input
             type="url"
             value={photo}
@@ -84,7 +84,7 @@ function SignupFormPage({ setLogin }) {
         </fieldset>
         <div className={classes.button}>
           <button
-            className={classes.login}
+            className={classes.toLogin}
             type="button"
             onClick={() => {
               setLogin(true);
