@@ -53,6 +53,15 @@ function LoginFormPage() {
         </fieldset>
         <div className={classes.button}>
           <button type="submit">Log In</button>
+          <button
+            type="button"
+            onClick={(e) => {
+              setCredential("demo@user.io");
+              setPassword("password");
+            }}
+          >
+            Demo
+          </button>
         </div>
       </div>
     </form>

@@ -41,6 +41,9 @@
 
 .button {
    margin-top: 10vh;
+   display: flex;
+   justify-content: flex-end;
+   padding: 1rem;
 }
 
 .button>button {
