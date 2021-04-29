@@ -3,8 +3,10 @@
 
 :root {
    --main-bg-color: hsl(0, 0%, 100%);
+   --text-box-color: hsl(0, 10%, 90%);
    --secondary-bg-color: hsl(0, 0%, 80%);
    --green-1-color: hsl(111, 20%, 80%);
+   --green-2-color: hsl(111, 20%, 60%);
    --font-family: 'Lato', sans-serif;
 }
 

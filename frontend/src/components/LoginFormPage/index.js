@@ -27,14 +27,14 @@ function LoginFormPage() {
   return (
     <form onSubmit={handleSubmit} className={classes.outer_form_container}>
       <div className={classes.login_flex_container}>
-        <ul className="erros-form_container">
+        <h1>Please Sign In</h1>
+        <ul className={classes.errors}>
           {errors.map((error, idx) => (
             <li key={idx}>{error}</li>
           ))}
         </ul>
         <fieldset className={classes.login}>
-          <label></label>
-          Name or Email
+          <legend>Name or Email</legend>
           <input
             type="text"
             value={credential}
@@ -42,21 +42,17 @@ function LoginFormPage() {
             required
           />
         </fieldset>
-        <fieldset>
-          <label className="login-lable password">
-            Password
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-          </label>
+        <fieldset className={classes.password}>
+          <legend>Password</legend>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
         </fieldset>
-        <div>
-          <button type="submit" id="login-form_submit">
-            Log In
-          </button>
+        <div className={classes.button}>
+          <button type="submit">Log In</button>
         </div>
       </div>
     </form>

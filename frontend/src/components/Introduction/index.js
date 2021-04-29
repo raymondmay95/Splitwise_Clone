@@ -6,7 +6,7 @@ function Introduction() {
   return (
     <div className={classes.body}>
       <fieldset className={classes.fieldset}>
-        <legend>Welcome</legend>
+        <legend className={classes.intro_legend}>Welcome</legend>
         <div className={classes.outer_box}>
           <div className={classes.inner_box}>
             <div className={classes.form_box}>

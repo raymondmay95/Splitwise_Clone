@@ -1,17 +1,54 @@
 .outer_form_container {
-   width: 100%;
+   width: 80%;
    height: 100%;
    display: flex;
    flex-direction: column;
+   align-items: flex-end;
+   justify-content: space-between;
 }
 
-.login {
-   width: 50%;
+.errors {
+   font-size: medium;
+   font-weight: bold;
+}
+
+.login,
+.password {
+   font-size: 2rem;
+}
+
+.login>input {
+   width: 95%;
    height: fit-content;
-   display: flex;
-   justify-content: center;
+   line-height: 1.75rem;
+   background-color: var(--text-box-color);
+   font-size: 1.5rem;
+   text-align: right;
+}
+
+.password>input {
+   height: fit-content;
+   line-height: 1.75rem;
+   width: 95%;
+   background-color: var(--text-box-color);
+   font-size: 1.5rem;
+   text-align: right;
 }
 
 .login_flex_container ul {
    list-style-type: none;
+}
+
+.button {
+   margin-top: 10vh;
+}
+
+.button>button {
+   height: 2rem;
+   width: 4rem;
+   background-color: var(--green-1-color);
+}
+
+.button>button:hover {
+   background-color: var(--green-2-color);
 }

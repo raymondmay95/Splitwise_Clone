@@ -16,7 +16,7 @@
    align-items: center;
 }
 
-legend {
+.intro_legend {
    font-size: 5rem;
    width: fit-content;
    height: fit-content;
