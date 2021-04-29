@@ -18,7 +18,6 @@ function App() {
   return (
     <>
       <div className="App-containter">
-        {/* <Navigation isLoaded={isLoaded} /> */}
         {isLoaded && (
           <Switch>
             <Route path="/login">
@@ -28,6 +27,7 @@ function App() {
               <SignupFormPage />
             </Route>
             <Route path="/user">
+              <Navigation isLoaded={isLoaded} />
               <ACCOUNT_PAGE isLoaded={isLoaded} />
             </Route>
             <Route path="/" exact>

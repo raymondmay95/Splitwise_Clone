@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
-import "./SignupForm.css";
+import * as classes from "./SignupForm.module.css";
 
-function SignupFormPage() {
+function SignupFormPage({ setLogin }) {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
   const [email, setEmail] = useState("");
@@ -32,67 +32,68 @@ function SignupFormPage() {
     ]);
   };
 
+  if (errors.length) alert(errors);
+
   return (
     <>
-      <div className="Signup-errors_container">
-        <ul className="Signup-errors">
-          {errors.map((error, idx) => (
-            <li key={idx}>{error}</li>
-          ))}
-        </ul>
-      </div>
-      {/* <img
-        src="https://media.giphy.com/media/OkJat1YNdoD3W/giphy.gif"
-        id="welcome-gif"
-        alt="welcome-gif"
-      ></img> */}
-      <form onSubmit={handleSubmit} className="Nav-bar_signup">
-        <label className="email">
-          Email
+      <form onSubmit={handleSubmit} className={classes.signup}>
+        <fieldset className={classes.fieldset_signup}>
+          <legend className={classes.email}>Email</legend>
           <input
             type="text"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
           />
-        </label>
-        <label className="fullName">
-          Full Name
+        </fieldset>
+        <fieldset className={classes.fieldset_signup}>
+          <legend className={classes.name}>Full Name</legend>
           <input
             type="text"
             value={fullName}
             onChange={(e) => setUsername(e.target.value)}
             required
           />
-        </label>
-        <label className="password">
-          Password
+        </fieldset>
+        <fieldset className={classes.fieldset_signup}>
+          <legend className={classes.password}>Password</legend>
           <input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
           />
-        </label>
-        <label className="password">
-          Confirm Password
+        </fieldset>
+        <fieldset className={classes.fieldset_signup}>
+          <legend className={classes.password}>Confirm Password</legend>
           <input
             type="password"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
             required
           />
-        </label>
-        <label className="user-photo_input">
-          Photo Url
+        </fieldset>
+        <fieldset className={classes.fieldset_signup}>
+          <legend className={classes.photoInput}>Photo Url</legend>
           <input
             type="url"
             value={photo}
             onChange={(e) => setPhoto(e.target.value)}
             required
           />
-        </label>
-        <button type="submit">Sign Up</button>
+        </fieldset>
+        <div className={classes.button}>
+          <button
+            className={classes.login}
+            type="button"
+            onClick={() => {
+              setLogin(true);
+            }}
+          >
+            Login
+          </button>
+          <button type="submit">Sign Up</button>
+        </div>
       </form>
     </>
   );

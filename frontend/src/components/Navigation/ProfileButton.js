@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
+import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import { NavLink } from "react-router-dom";
 
@@ -27,6 +28,7 @@ function ProfileButton({ user }) {
   const logout = (e) => {
     e.preventDefault();
     dispatch(sessionActions.logout());
+    window.location.pathname = "/";
   };
 
   return (
@@ -39,20 +41,12 @@ function ProfileButton({ user }) {
       {showMenu && (
         <ul className="dropdown-menu pull-right">
           <div className="dropdown-flex_container">
-            <li>
-              <NavLink to="/user">Your account </NavLink>
-            </li>
-            <li>
-              <NavLink to="/create/group">Create a group </NavLink>
-            </li>
-            <li>
-              <NavLink to="/calculator">Fairness calculators </NavLink>
-            </li>
-            <li onClick={logout}>
-              <NavLink exact to="/">
-                Log out
-              </NavLink>
-            </li>
+            <NavLink to="/user">Your account </NavLink>
+            <NavLink to="/create/group">Create a group </NavLink>
+            <NavLink to="/calculator">Fairness calculators </NavLink>
+            <NavLink to="/" onClick={logout}>
+              Log out
+            </NavLink>
           </div>
         </ul>
       )}

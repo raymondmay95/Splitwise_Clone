@@ -31,7 +31,7 @@ function Navigation({ isLoaded }) {
         <NavLink exact to="/" className="home-link">
           Home
         </NavLink>
-        <ul class="nav pull-right">
+        <ul className="nav pull-right">
           <li>
             <NavLink to="/user" className="dropdown-toggle">
               <img

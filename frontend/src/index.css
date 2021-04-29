@@ -3,6 +3,7 @@
 
 :root {
    --main-bg-color: hsl(0, 0%, 100%);
+   --main-text-color: hsl(0, 0%, 20%);
    --text-box-color: hsl(0, 10%, 90%);
    --secondary-bg-color: hsl(0, 0%, 80%);
    --green-1-color: hsl(111, 20%, 80%);

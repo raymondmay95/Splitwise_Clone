@@ -4,14 +4,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import * as classes from "./LoginForm.module.css";
 
-function LoginFormPage() {
+function LoginFormPage({ setLogin }) {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
   const [credential, setCredential] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
 
-  if (sessionUser) return <Redirect to="/" />;
+  if (sessionUser) return <Redirect to={`/user/${sessionUser.id}`} />;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -27,7 +27,7 @@ function LoginFormPage() {
   return (
     <form onSubmit={handleSubmit} className={classes.outer_form_container}>
       <div className={classes.login_flex_container}>
-        <h1>Please Sign In</h1>
+        <h2>Please Sign In</h2>
         <ul className={classes.errors}>
           {errors.map((error, idx) => (
             <li key={idx}>{error}</li>
@@ -61,6 +61,15 @@ function LoginFormPage() {
             }}
           >
             Demo
+          </button>
+          <button
+            type="button"
+            className={classes.signUp}
+            onClick={() => {
+              setLogin(false);
+            }}
+          >
+            Sign Up
           </button>
         </div>
       </div>

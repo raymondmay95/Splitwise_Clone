@@ -17,7 +17,7 @@
 }
 
 .intro_legend {
-   font-size: 5rem;
+   font-size: 3rem;
    width: fit-content;
    height: fit-content;
 }
@@ -37,10 +37,16 @@
    height: 60%;
    transform: rotate(90deg);
    border-radius: 5%;
+   display: flex;
+   justify-content: flex-start;
 }
 
 .form_box {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   align-items: center;
    transform: rotate(-90deg);
-   width: 90%;
+   width: 50%;
    height: 90%;
 }
