@@ -21,4 +21,5 @@ body {
    display: flex;
    scroll-behavior: smooth;
    box-sizing: border-box;
+   width: 94vw;
 }

@@ -2,6 +2,8 @@ import { csrfFetch } from "./csrf";
 
 const SET_USER = "session/setUser";
 const REMOVE_USER = "session/removeUser";
+const UPDATE_ACCOUNT_BALANCE = "session/updateBalance";
+
 const setUser = (user) => {
   return {
     type: SET_USER,
@@ -12,6 +14,14 @@ const setUser = (user) => {
 const removeUser = () => {
   return {
     type: REMOVE_USER,
+  };
+};
+
+export const updateBalance = (user, balance) => {
+  user.accountBalance = balance;
+  return {
+    type: UPDATE_ACCOUNT_BALANCE,
+    payload: user,
   };
 };
 
