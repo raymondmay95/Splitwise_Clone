@@ -35,7 +35,7 @@ function SignupFormPage({ setLogin }) {
   if (errors.length) alert(errors);
 
   return (
-    <>
+    <div className={classes.FormContainer}>
       <form onSubmit={handleSubmit} className={classes.signup}>
         <fieldset className={classes.fieldset_signup}>
           <legend className={classes.email}>Email 📨</legend>
@@ -95,7 +95,7 @@ function SignupFormPage({ setLogin }) {
           <button type="submit">Sign Up</button>
         </div>
       </form>
-    </>
+    </div>
   );
 }
 

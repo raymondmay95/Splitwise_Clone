@@ -25,55 +25,57 @@ function LoginFormPage({ setLogin }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className={classes.outer_form_container}>
-      <div className={classes.login_flex_container}>
-        <h2>Please Sign In</h2>
-        <ul className={classes.errors}>
-          {errors.map((error, idx) => (
-            <li key={idx}>{error}</li>
-          ))}
-        </ul>
-        <fieldset className={classes.login}>
-          <legend>Name or Email</legend>
-          <input
-            type="text"
-            value={credential}
-            onChange={(e) => setCredential(e.target.value)}
-            required
-          />
-        </fieldset>
-        <fieldset className={classes.password}>
-          <legend>Password</legend>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </fieldset>
-        <div className={classes.button}>
-          <button type="submit">Log In</button>
-          <button
-            type="button"
-            onClick={(e) => {
-              setCredential("demo@user.io");
-              setPassword("password");
-            }}
-          >
-            Demo
-          </button>
-          <button
-            type="button"
-            className={classes.signUp}
-            onClick={() => {
-              setLogin(false);
-            }}
-          >
-            Sign Up
-          </button>
+    <div className={classes.FormContainer}>
+      <form onSubmit={handleSubmit} className={classes.outer_form_container}>
+        <div className={classes.login_flex_container}>
+          <h2>Please Sign In</h2>
+          <ul className={classes.errors}>
+            {errors.map((error, idx) => (
+              <li key={idx}>{error}</li>
+            ))}
+          </ul>
+          <fieldset className={classes.login}>
+            <legend>Name or Email</legend>
+            <input
+              type="text"
+              value={credential}
+              onChange={(e) => setCredential(e.target.value)}
+              required
+            />
+          </fieldset>
+          <fieldset className={classes.password}>
+            <legend>Password</legend>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </fieldset>
+          <div className={classes.button}>
+            <button type="submit">Log In</button>
+            <button
+              type="button"
+              onClick={(e) => {
+                setCredential("demo@user.io");
+                setPassword("password");
+              }}
+            >
+              Demo
+            </button>
+            <button
+              type="button"
+              className={classes.signUp}
+              onClick={() => {
+                setLogin(false);
+              }}
+            >
+              Sign Up
+            </button>
+          </div>
         </div>
-      </div>
-    </form>
+      </form>
+    </div>
   );
 }
 

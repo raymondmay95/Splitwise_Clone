@@ -1,8 +1,10 @@
 import { csrfFetch } from "./csrf";
-
 const SET_USER = "session/setUser";
 const REMOVE_USER = "session/removeUser";
-const UPDATE_ACCOUNT_BALANCE = "session/updateBalance";
+
+//ToDo:   1. create action and thunk action to update account balance
+//ToDo:   2. dispatch
+//ToDo:   3. update postgres
 
 const setUser = (user) => {
   return {
@@ -14,14 +16,6 @@ const setUser = (user) => {
 const removeUser = () => {
   return {
     type: REMOVE_USER,
-  };
-};
-
-export const updateBalance = (user, balance) => {
-  user.accountBalance = balance;
-  return {
-    type: UPDATE_ACCOUNT_BALANCE,
-    payload: user,
   };
 };
 

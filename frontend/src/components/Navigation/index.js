@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 // import ProfileButton from "./ProfileButton";
 // import LoginFormModal from "../LoginFormModal";
 import * as classes from "./Navigation.module.css";
+import SettingsModal from "../SettingsModal";
 
 function Navigation({ user }) {
   return (
@@ -19,9 +20,7 @@ function Navigation({ user }) {
       <NavLink to="/payment-history" className={classes.navlinks}>
         ✔
       </NavLink>
-      <NavLink to="/settings" className={classes.navlinks}>
-        ⚙
-      </NavLink>
+      <SettingsModal />
     </nav>
   );
 }

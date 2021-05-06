@@ -5,7 +5,7 @@
    --main-bg-color: hsl(0, 0%, 100%);
    --main-text-color: hsl(0, 0%, 20%);
    --text-box-color: hsl(0, 10%, 90%);
-   --secondary-bg-color: hsl(0, 0%, 80%);
+   --secondary-bg-color: hsl(0, 0%, 95%);
    --green-1-color: hsl(111, 20%, 80%);
    --green-2-color: hsl(111, 20%, 60%);
    --font-family: 'Lato', sans-serif;
@@ -17,7 +17,7 @@
 
 body {
    font-family: var(--font-family);
-   background-color: var(--main-bg-color);
+   background-color: var(--secondary-bg-color);
    display: flex;
    scroll-behavior: smooth;
    box-sizing: border-box;
