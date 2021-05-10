@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import SignupFormPage from "./components/SignupFormPage";
@@ -14,11 +14,11 @@ import Wallet from "./components/wallet";
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
-  const [user, setUser] = useState(null);
+  const user = useRef(null);
   useEffect(() => {
     async function getUser() {
       let res = await dispatch(sessionActions.restoreUser());
-      setUser(res.user);
+      user.current = res.user;
       dispatch(sessionActions.invoicesThunk(res.user));
       setIsLoaded(true);
     }
@@ -53,13 +53,15 @@ function App() {
             {user && (
               <Route path="/payment-history" exact>
                 <Navigation user={user} />
+                <div className="NavSpacer"></div>
                 <PaymentHistory user={user} />
               </Route>
             )}
             {user && (
               <Route path="/wallet" exact>
                 <Navigation user={user} />
-                <Wallet user={user} setUser={setUser} />
+                <div className="NavSpacer"></div>
+                <Wallet user={user} />
               </Route>
             )}
             <Route path="/" exact>

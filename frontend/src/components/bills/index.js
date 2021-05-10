@@ -5,7 +5,7 @@ function Bills({ user }) {
   // console.log(user);
   const [totalAmount, setTotalAmount] = useState(0);
   const [invoicesState, setInvoicesState] = useState([]);
-  const data = user.invoices;
+  const data = user.current.invoices;
   if (data) var { invoices } = data;
 
   useEffect(() => {

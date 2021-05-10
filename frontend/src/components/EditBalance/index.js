@@ -1,15 +1,20 @@
 import React, { useState } from "react";
 import * as classes from "./editProfile.module.css";
 import updateBalanceThunk from "../../store/session";
-function EditBalance({ user, setUser }) {
-  const [newBalance, setNewBalance] = useState(0.0);
-
+function EditBalance({ user, setBalance }) {
   // const [newEmail, setNewEmail] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
-    setNewBalance(Number(e.target.newBalance.value));
-    updateBalanceThunk(newBalance, user);
+    let curBal = Number(e.target.newBalance.value);
+    updateBalanceThunk(curBal, user);
+    let newState = user.current;
+    let { accountBalance } = newState;
+    let newBalance = accountBalance + curBal;
+    newState.accountBalance = newBalance;
+    user.current = newState;
+    e.target.newBalance.value = 0;
+    setBalance(newBalance);
   }
 
   return (
