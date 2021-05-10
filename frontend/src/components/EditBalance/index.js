@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import * as classes from "./editProfile.module.css";
 import updateBalanceThunk from "../../store/session";
-function EditBalance({ user }) {
+function EditBalance({ user, setUser }) {
   const [newBalance, setNewBalance] = useState(0.0);
+
   // const [newEmail, setNewEmail] = useState("");
 
   function handleSubmit(e) {
@@ -10,7 +11,7 @@ function EditBalance({ user }) {
     setNewBalance(Number(e.target.newBalance.value));
     updateBalanceThunk(newBalance, user);
   }
-  // console.log(newBalance);
+
   return (
     <fieldset className={classes.outerContainer}>
       <legend>Add to account balance</legend>

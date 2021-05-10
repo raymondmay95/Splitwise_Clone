@@ -63,18 +63,20 @@ export const logout = () => async (dispatch) => {
   return response;
 };
 
-const invoices = (user, { invoices }) => {
+const invoices = ({ userWithInvoice }) => {
   return {
     type: INVOICES,
-    payload: (user.invoices = invoices),
+    payload: userWithInvoice,
   };
 };
 
 export const invoicesThunk = (user) => async (dispatch) => {
+  if (!user) return
   let id = user.id;
   const response = await csrfFetch(`/api/activity/${id}`, { method: "GET" });
   let userInvoices = await response.json();
-  dispatch(invoices(user, userInvoices));
+  user.invoices = userInvoices;
+  dispatch(invoices(user));
   return userInvoices;
 };
 
@@ -93,7 +95,6 @@ const sessionReducer = (state = initialState, action) => {
       return newState;
     case INVOICES:
       newState = Object.assign({}, state);
-      newState.invoices = action.payload;
       return newState;
     default:
       return state;

@@ -1,10 +1,24 @@
+.outer_flex {
+   display: block;
+   text-align: center;
+}
+
 .cards {
+   text-align: right;
    list-style-type: none;
+   padding: 1rem;
+}
+
+.flex {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
 }
 
 .fieldset {
-   padding: 2rem;
-   border-top-right-radius: 30%;
+   border-radius: 5%;
+   display: inline-flex;
+   align-items: center;
 }
 
 .fieldset legend {
@@ -14,5 +28,6 @@
 }
 
 .fieldset div {
-   border-radius: 50%;
+   border-radius: 35%;
+
 }

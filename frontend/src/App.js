@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import SignupFormPage from "./components/SignupFormPage";
 import LoginFormPage from "./components/LoginFormPage";
@@ -14,12 +14,12 @@ import Wallet from "./components/wallet";
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
-  const { user } = useSelector((state) => state.session);
+  const [user, setUser] = useState(null);
   useEffect(() => {
     async function getUser() {
-      let { user } = await dispatch(sessionActions.restoreUser());
-      // console.log(user.id);
-      dispatch(sessionActions.invoicesThunk(user));
+      let res = await dispatch(sessionActions.restoreUser());
+      setUser(res.user);
+      dispatch(sessionActions.invoicesThunk(res.user));
       setIsLoaded(true);
     }
     getUser();
@@ -59,7 +59,7 @@ function App() {
             {user && (
               <Route path="/wallet" exact>
                 <Navigation user={user} />
-                <Wallet user={user} />
+                <Wallet user={user} setUser={setUser} />
               </Route>
             )}
             <Route path="/" exact>
