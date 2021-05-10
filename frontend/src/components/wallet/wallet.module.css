@@ -1,0 +1,39 @@
+/* spcae-between is splitting the difference in pull right and lefts width (2%) */
+.Outer_Body {
+   width: 90vw;
+   height: 90vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: var(--secondary-bg-color);
+}
+
+.Body {
+   margin-left: 2rem;
+   width: 90vw;
+   border: solid 1px #000;
+   display: flex;
+   justify-content: space-between;
+   height: 60vh;
+   background-color: var(--main-bg-color);
+}
+
+.Pull_Left {
+   width: 49%;
+   height: max-content;
+}
+
+.Pull_Right {
+   align-self: flex-start;
+   width: 49%;
+   height: max-content;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   margin-top: 1rem;
+}
+
+.Spacer {
+   height: 2rem;
+}

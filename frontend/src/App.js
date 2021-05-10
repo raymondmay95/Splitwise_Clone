@@ -6,20 +6,27 @@ import LoginFormPage from "./components/LoginFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import Introduction from "./components/Introduction";
-import PAGE_DESIGN from "./components/Page_Design";
 import ACCOUNT_PAGE from "./components/account";
+import Bills from "./components/bills";
+import PaymentHistory from "./components/paymentHistory";
+import Wallet from "./components/wallet";
 
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
+  const [user, setUser] = useState(null);
   useEffect(() => {
-    dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
+    async function getUser() {
+      let res = await dispatch(sessionActions.restoreUser());
+      setUser(res.user);
+      dispatch(sessionActions.invoicesThunk(res.user));
+      setIsLoaded(true);
+    }
+    getUser();
   }, [dispatch]);
-
   return (
     <>
       <div className="App-containter">
-        <Navigation isLoaded={isLoaded} />
         {isLoaded && (
           <Switch>
             <Route path="/login">
@@ -28,12 +35,35 @@ function App() {
             <Route path="/signup">
               <SignupFormPage />
             </Route>
-            <Route path="/user">
-              <ACCOUNT_PAGE isLoaded={isLoaded} />
-            </Route>
+            {user && (
+              <Route path="/user">
+                <Navigation user={user} />
+                <div className="NavSpacer"></div>
+                <ACCOUNT_PAGE user={user} />
+              </Route>
+            )}
+            {user && <Route path="/settings" exact></Route>}
+            {user && (
+              <Route path="/bills" exact>
+                <Navigation user={user} />
+                <div className="NavSpacer"></div>
+                <Bills user={user} />
+              </Route>
+            )}
+            {user && (
+              <Route path="/payment-history" exact>
+                <Navigation user={user} />
+                <PaymentHistory user={user} />
+              </Route>
+            )}
+            {user && (
+              <Route path="/wallet" exact>
+                <Navigation user={user} />
+                <Wallet user={user} setUser={setUser} />
+              </Route>
+            )}
             <Route path="/" exact>
               <Introduction />
-              <PAGE_DESIGN />
             </Route>
           </Switch>
         )}

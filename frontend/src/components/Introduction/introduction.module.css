@@ -1,0 +1,52 @@
+.body {
+   width: 94vw;
+   height: fit-content;
+   display: flex;
+   justify-content: center;
+}
+
+.fieldset {
+   text-align: right;
+   width: 82vw;
+   height: 50vmax;
+   right: 0;
+   bottom: 0;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.intro_legend {
+   font-size: 3rem;
+   width: fit-content;
+   height: fit-content;
+}
+
+.outer_box {
+   width: 95%;
+   height: 90%;
+   background-color: var(--secondary-bg-color);
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+}
+
+.inner_box {
+   background-color: var(--green-1-color);
+   width: 45%;
+   height: 60%;
+   transform: rotate(90deg);
+   border-radius: 5%;
+   display: flex;
+   justify-content: flex-start;
+}
+
+.form_box {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   align-items: center;
+   transform: rotate(-90deg);
+   width: 50%;
+   height: 90%;
+}

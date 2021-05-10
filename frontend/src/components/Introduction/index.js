@@ -1,27 +1,27 @@
-import React from "react";
-import "./introduction.css";
+import React, { useState } from "react";
+import * as classes from "./introduction.module.css";
+import LoginFormPage from "../LoginFormPage";
+import SignupFormPage from "../SignupFormPage";
 
-function Introduction(isLoaded) {
-  const bios = [
-    ["...designed to make your life easier"],
-    ["...designed to make your life faster"],
-    ["...designed to make your life more enjoyable"],
-    ["...designed to make your life your responsibility"],
-  ];
-
+function Introduction() {
+  const [login, setLogin] = useState(true);
   return (
-    <>
-      <section className="bio_container">
-        <div className="bio-flex_container">
-          <div class="bio">
-            <h1>Hello and Welcome to My Fare</h1>
-            {bios.map((bio, i) => (
-              <h3 className={`bio_${i}`}>{bio}</h3>
-            ))}
+    <div className={classes.body}>
+      <fieldset className={classes.fieldset}>
+        <legend className={classes.intro_legend}>Welcome</legend>
+        <div className={classes.outer_box}>
+          <div className={classes.inner_box}>
+            <div className={classes.form_box}>
+              {login ? (
+                <LoginFormPage setLogin={setLogin} />
+              ) : (
+                <SignupFormPage setLogin={setLogin} />
+              )}
+            </div>
           </div>
         </div>
-      </section>
-    </>
+      </fieldset>
+    </div>
   );
 }
 

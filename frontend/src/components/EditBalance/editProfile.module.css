@@ -1,0 +1,23 @@
+.form {
+   width: fit-content;
+}
+
+.outerContainer {
+   display: flex;
+   justify-content: center;
+}
+
+.outerContainer input:not(.submit) {
+   width: 90%;
+}
+
+.outerContainer select {
+   width: 90%;
+}
+
+.submitContainer {
+   width: 100%;
+   display: flex;
+   justify-content: flex-end;
+   margin-top: 1rem;
+}

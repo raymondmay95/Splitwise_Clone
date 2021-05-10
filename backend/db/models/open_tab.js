@@ -13,5 +13,14 @@ module.exports = (sequelize, DataTypes) => {
     Open_tab.belongsTo(models.Invoice, { foreignKey: "invoiceId" });
   };
 
+  Open_tab.getAll = async function (id) {
+    const Open_tabs = await Open_tab.findAll({
+      where: {
+        invoiceId: id,
+      },
+    });
+    return Open_tabs;
+  };
+
   return Open_tab;
 };
