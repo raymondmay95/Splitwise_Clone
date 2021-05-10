@@ -17,7 +17,9 @@ function App() {
   const { user } = useSelector((state) => state.session);
   useEffect(() => {
     async function getUser() {
-      dispatch(sessionActions.restoreUser());
+      let { user } = await dispatch(sessionActions.restoreUser());
+      // console.log(user.id);
+      dispatch(sessionActions.invoicesThunk(user));
       setIsLoaded(true);
     }
     getUser();

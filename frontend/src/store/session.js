@@ -1,6 +1,7 @@
 import { csrfFetch } from "./csrf";
 const SET_USER = "session/setUser";
 const REMOVE_USER = "session/removeUser";
+const INVOICES = "session/invoices";
 
 //ToDo:   1. create action and thunk action to update account balance
 //ToDo:   2. dispatch
@@ -36,7 +37,7 @@ export const restoreUser = () => async (dispatch) => {
   const response = await csrfFetch("/api/session");
   const data = await response.json();
   dispatch(setUser(data.user));
-  return response;
+  return data;
 };
 export const signup = (user) => async (dispatch) => {
   const { fullName, email, password, photo } = user;
@@ -62,6 +63,21 @@ export const logout = () => async (dispatch) => {
   return response;
 };
 
+const invoices = (user, { invoices }) => {
+  return {
+    type: INVOICES,
+    payload: (user.invoices = invoices),
+  };
+};
+
+export const invoicesThunk = (user) => async (dispatch) => {
+  let id = user.id;
+  const response = await csrfFetch(`/api/activity/${id}`, { method: "GET" });
+  let userInvoices = await response.json();
+  dispatch(invoices(user, userInvoices));
+  return userInvoices;
+};
+
 const initialState = { user: null };
 
 const sessionReducer = (state = initialState, action) => {
@@ -74,6 +90,10 @@ const sessionReducer = (state = initialState, action) => {
     case REMOVE_USER:
       newState = Object.assign({}, state);
       newState.user = null;
+      return newState;
+    case INVOICES:
+      newState = Object.assign({}, state);
+      newState.invoices = action.payload;
       return newState;
     default:
       return state;
