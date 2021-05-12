@@ -1,25 +1,20 @@
 import { csrfFetch } from "./csrf";
 const SET_USER = "session/setUser";
 const REMOVE_USER = "session/removeUser";
+const UPDATE_USER = "session/updateUser";
 const INVOICES = "session/invoices";
 
 //ToDo:   1. create action and thunk action to update account balance
 //ToDo:   2. dispatch
 //ToDo:   3. update postgres
 
+// set user
 const setUser = (user) => {
   return {
     type: SET_USER,
     payload: user,
   };
 };
-
-const removeUser = () => {
-  return {
-    type: REMOVE_USER,
-  };
-};
-
 export const login = (user) => async (dispatch) => {
   const { credential, password } = user;
   const response = await csrfFetch("/api/session", {
@@ -55,6 +50,12 @@ export const signup = (user) => async (dispatch) => {
   return response;
 };
 
+//delete user
+const removeUser = () => {
+  return {
+    type: REMOVE_USER,
+  };
+};
 export const logout = () => async (dispatch) => {
   const response = await csrfFetch("/api/session", {
     method: "DELETE",
@@ -62,7 +63,19 @@ export const logout = () => async (dispatch) => {
   dispatch(removeUser());
   return response;
 };
+//update user
+const updateUser = (updatedUser) => {
+  return {
+    type: UPDATE_USER,
+    payload: updatedUser,
+  };
+};
 
+export const updateUserThunk = (user, eleToUpdate) => async (dispatch) => {
+  if (!user) return;
+  if (user && !eleToUpdate) return dispatch(updateUser(user));
+};
+//invoices
 const invoices = ({ userWithInvoice }) => {
   return {
     type: INVOICES,
@@ -71,7 +84,7 @@ const invoices = ({ userWithInvoice }) => {
 };
 
 export const invoicesThunk = (user) => async (dispatch) => {
-  if (!user) return
+  if (!user) return;
   let id = user.id;
   const response = await csrfFetch(`/api/activity/${id}`, { method: "GET" });
   let userInvoices = await response.json();
@@ -95,6 +108,10 @@ const sessionReducer = (state = initialState, action) => {
       return newState;
     case INVOICES:
       newState = Object.assign({}, state);
+      return newState;
+    case UPDATE_USER:
+      newState = Object.assign({}, state);
+      newState.user = action.payload;
       return newState;
     default:
       return state;
