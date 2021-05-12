@@ -19,7 +19,7 @@ function App() {
     async function getUser() {
       let res = await dispatch(sessionActions.restoreUser());
       user.current = res.user;
-      dispatch(sessionActions.invoicesThunk(res.user));
+      await dispatch(sessionActions.invoicesThunk(res.user));
       setIsLoaded(true);
     }
     getUser();

@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import * as classes from "./editProfile.module.css";
-import updateBalanceThunk from "../../store/session";
+import * as sessionActions from "../../store/session";
+import { useDispatch } from "react-redux";
 function EditBalance({ user, setBalance }) {
-  // const [newEmail, setNewEmail] = useState("");
+  const dispatch = useDispatch();
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
     let curBal = Number(e.target.newBalance.value);
-    updateBalanceThunk(curBal, user);
     let newState = user.current;
     let { accountBalance } = newState;
     let newBalance = accountBalance + curBal;
@@ -15,6 +15,7 @@ function EditBalance({ user, setBalance }) {
     user.current = newState;
     e.target.newBalance.value = 0;
     setBalance(newBalance);
+    return await dispatch(sessionActions.updateUserThunk(user.current));
   }
 
   return (
